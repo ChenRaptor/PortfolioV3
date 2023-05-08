@@ -24,6 +24,12 @@ export default function RootLayout({
       <body className={inter.className}>
         <ParallaxProvider>
         <div className='main-app'>
+          {/* <div className='popup'>
+            <form>
+              <input type='text'></input>
+              <input type='password'></input>
+            </form>
+          </div> */}
           <div className='main-app-whitespace menu'>
             <Logo/>
             <NavAside/>

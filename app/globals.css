@@ -120,3 +120,37 @@ body {
 .p8 { grid-area: p8; }
 
 .p9 { grid-area: p9; }
+
+
+.popup {
+  position: fixed;
+  top: calc(50vh - 10rem);
+  left: calc(50vw - 15rem);
+  width: 30rem;
+  height: 20rem;
+  background: #1d1e24;
+  z-index: 10;
+  border-radius: 0.25rem;
+}
+
+.popup > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.popup > form > input {
+  background: #272932;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+  text-indent: 1rem;
+  caret-color: #9488ff;
+  color: #9488ff;
+}
