@@ -1,0 +1,72 @@
+:root {
+  --primary: #0b090a;
+  --secondary: #161a1d;
+  --accent: #02c39a;
+  --accent2: #e5383b;
+  --color: #ecedee;
+  --block: #1d1e24;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+body {
+  background: var(--primary);
+}
+
+.main-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-app-whitespace {
+  display: flex;
+  align-items: center;
+  width: 8rem;
+  min-height: 200vh;
+  height: 200vh;
+  max-height: 200vh;
+  flex-direction: column;
+}
+.index {
+  justify-content: center;
+}
+.index > div {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.index > div > p {
+  transform: rotate(90deg);
+  color: #7c7c7c;
+  text-align: center;
+  gap: 0.5rem;
+    display: flex;
+}
+
+.btn {
+  border: 0;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: var(--block);
+  color: var(--color);
+  border: 1px solid #363636;
+  transition: all 0.1s;
+}
+
+.btn:hover {
+  color: var(--accent2);
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}

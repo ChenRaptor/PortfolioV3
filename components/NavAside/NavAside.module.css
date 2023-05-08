@@ -1,0 +1,9 @@
+.main {
+    background: var(--block);
+    width: 4rem;
+    height: 10rem;
+    border-radius: 0.25rem;
+    position: fixed;
+    top: 6rem;
+    border: 1px solid #936161;
+}

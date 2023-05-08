@@ -1,0 +1,92 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6rem;
+  width: calc(100% - 16rem);
+  min-height: 100vh;
+}
+.title {
+  color: var(--color);
+  font-weight: 700;
+  font-size: 3rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI','Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans','Helvetica Neue', sans-serif;
+}
+.title > div {
+  display: flex;
+  gap: 16px;
+}
+
+.color-orange {
+    background-image: linear-gradient(rgb(243, 101, 52) 25%, rgb(246, 159, 39) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.color-cyan {
+  background-image: linear-gradient(rgb(0, 183, 250) 25%, rgb(1, 207, 234) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.color-white {
+  -webkit-text-fill-color: var(--color);
+}
+
+.section {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.index-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.index-section > aside {
+  width: fit-content;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.index-section > aside > div {
+  width: 100%;
+}
+.index-section > div {
+  width: 100%;
+  height: 100%;
+  padding: 0 2rem;
+}
+.canvas {
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  padding: 0 !important;
+  position: absolute;
+}
+.board-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 400px;
+  background: var(--secondary);
+  border-radius: 0.25rem;
+}
+.board-section::before {
+  width: 100vw;
+  height: 100%;
+  background: var(--primary);
+  content: '';
+  position: absolute;
+  z-index: -1;
+}
+/*var(--nextui-fonts-sans)*/
+
