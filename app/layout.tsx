@@ -1,7 +1,11 @@
+"use client"
 import NavAside from '@/components/NavAside/NavAside'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Logo from '@/components/Logo/Logo'
+import ClientOption from '@/components/ClientOption/ClientOption'
+import { ParallaxProvider } from 'react-scroll-parallax';
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -18,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <ParallaxProvider>
         <div className='main-app'>
           <div className='main-app-whitespace menu'>
             <Logo/>
@@ -25,10 +30,13 @@ export default function RootLayout({
           </div>
           {children}
           <div className='main-app-whitespace index'>
+            <ClientOption/>
             <div><p><span>SCROLL</span><span>DOWN</span></p></div>
+            <div></div>
             <div></div>
           </div>
         </div>
+        </ParallaxProvider>
       </body>
     </html>
   )

@@ -186,6 +186,7 @@ uniform vec3 color_step_4;
 uniform float ratio_step_1;
 uniform float ratio_step_2;
 uniform float displacement;
+uniform float factorAltitudeNotColor;
 uniform float factorAltitude;
 varying vec3 v_position;
 varying vec4 t_position;
@@ -246,10 +247,9 @@ void main()
     v_position  = new_position;
     v_intensity = get_intensity(v_position,0.0);
 
-
     t_position = projectionMatrix * modelViewMatrix * vec4(new_position,1.0);
 
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0);
+    gl_Position = t_position;
 }
 `
 
@@ -481,9 +481,8 @@ float get_intensity(vec3 position)
 vec4 getColor(vec3 new_position) {
 
     vec3 rbg0 = vec3(11./255., 9./255., 10./255.);
-    vec3 rbg1 = vec3(243./255., 101./255., 52./255.);
-    vec3 rbg2 = vec3(246./255., 159./255., 39./255.);
-
+    vec3 rbg1 = vec3(148./255., 136./255., 255./255.);
+    vec3 rbg2 = vec3(148./255., 136./255., 255./255.);
     vec4 borneOcean1 = vec4(rbg0, 0.);
     vec4 borneOcean2 = vec4(rbg0, 0.);
 

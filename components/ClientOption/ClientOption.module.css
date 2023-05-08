@@ -1,0 +1,10 @@
+.main {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    width: 5rem !important;
+    height: 2rem !important;
+    background: var(--block);
+    border-radius: 0.25rem;
+    z-index: 5;
+}

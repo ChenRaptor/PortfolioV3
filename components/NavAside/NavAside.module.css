@@ -1,9 +1,31 @@
 .main {
     background: var(--block);
     width: 4rem;
-    height: 10rem;
+    height: fit-content;
     border-radius: 0.25rem;
     position: fixed;
     top: 6rem;
-    border: 1px solid #936161;
+    /*border: 1px solid var(--accent3);*/
+}
+
+.main button {
+    background: none;
+    border: none;
+    width: 100%;
+    padding: 0.25rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.main button:hover {
+    background: #161615;
+    border-radius: 0.25rem;
+}
+.main button > svg {
+    fill: #ffffff;
+    transform: scale(0.5)
+}
+.main button:hover > svg{
+    fill:  #9488ff;
 }
