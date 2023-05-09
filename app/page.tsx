@@ -8,6 +8,7 @@ import { PresetsType } from '@react-three/drei/helpers/environment-assets'
 import styles from './page.module.css'
 import dynamic from 'next/dynamic'
 import { Parallax } from 'react-scroll-parallax'
+import { LoginButton } from '@/components/Buttons/Buttons'
 
 const CSRCanvas = dynamic(
   () => import('../components/scene3D/scene3D'),
@@ -83,23 +84,7 @@ export default function Home() {
 
       <section className={styles.section} id='grid2'>
         <div className={styles['portfolio-section']}>
-            <div className="container">
-                <div className="title">
-                    <h2 className={styles.title}>
-                        <div><span>My</span><span className={styles['color-cyan']}>Project</span></div>
-                    </h2>
-                </div>
-                <div className="search"></div>
-                <div className="p1"></div>
-                <div className="p2"></div>
-                <div className="p3"></div>
-                <div className="p4"></div>
-                <div className="p5"></div>
-                <div className="p6"></div>
-                <div className="p7"></div>
-                <div className="p8"></div>
-                <div className="p9"></div>
-            </div>
+          <LoginButton/>
         </div>
       </section>
     </main>
