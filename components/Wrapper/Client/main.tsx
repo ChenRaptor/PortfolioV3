@@ -1,8 +1,8 @@
 "use client"
 import { ParallaxProvider } from "react-scroll-parallax";
-import ClientOption from "../ClientOption/ClientOption";
-import NavAside from "../NavAside/NavAside";
-import Logo from "../Logo/Logo";
+import ClientOption from "../../ClientOption/ClientOption";
+import NavAside from "../../NavAside/NavAside";
+import Logo from "../../Logo/Logo";
 //import { LoginButton, LogoutButton, ProfileButton, RegisterButton } from "../Buttons/Buttons";
 
 export default function WrapperClient({children} : any) {

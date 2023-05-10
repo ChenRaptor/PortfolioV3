@@ -4,7 +4,8 @@ import { Inter } from 'next/font/google'
 import { Session } from 'next-auth'
 import { headers } from 'next/headers'
 import AuthContext from '../components/Provider/AuthContext';
-import WrapperClient from '@/components/Wrapper/WrapperClient'
+import WrapperClient from '@/components/Wrapper/Client/main'
+import { ProtectedLayout } from '@/components/Wrapper/ProtectedLayout/main';
 
 async function getSession(cookie: string): Promise<Session> {
   const response = await fetch(`${process.env.LOCAL_AUTH_URL}/api/auth/session`, {
@@ -32,12 +33,24 @@ export default async function RootLayout({
   children: React.ReactNode,
 }) {
   const session = await getSession(headers().get('cookie') ?? '');
+
+  //console.log(children?.props?.childProp.segment)
+
   return (
     <html lang="en">
         <body className={inter.className}>
           <AuthContext session={session}>
+
+
+
+
             <WrapperClient>
-              {children}
+              {
+                children?.props?.childProp.segment === 'dashboard' ? 
+                  <ProtectedLayout>{children}</ProtectedLayout> :
+                  <>{children}</>
+                
+              }
             </WrapperClient>
           </AuthContext>
         </body>

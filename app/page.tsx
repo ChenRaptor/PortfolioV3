@@ -16,7 +16,7 @@ const CSRCanvas = dynamic(
 )
 
 
-export default function Home() {
+function Home() {
 
   return (
     <main className={styles.main}>
@@ -90,3 +90,5 @@ export default function Home() {
     </main>
   )
 }
+
+export default Home;
