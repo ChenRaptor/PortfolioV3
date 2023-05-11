@@ -1,8 +1,21 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
-
+import { Session } from 'next-auth'
+import { headers } from 'next/headers'
 import WrapperClient from '@/components/Wrapper/Client/main'
+import AuthContext from '@/components/Provider/AuthContext'
 
+async function getSession(cookie: string): Promise<Session> {
+  const response = await fetch(`${process.env.LOCAL_AUTH_URL}/api/auth/session`, {
+    headers: {
+      cookie,
+    },
+  });
+
+  const session = await response.json();
+
+  return Object.keys(session).length > 0 ? session : null;
+}
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,16 +35,15 @@ export default async function RootLayout({
   children: React.ReactNode,
 }) {
 
+  const session = await getSession(headers().get('cookie') ?? '');
   const segment : string = (children as any)?.props?.childProp.segment;
 
   return (
     <html lang="en">
         <body className={inter.className}>
-          {
-            segment === '__PAGE__' ?
-            <WrapperClient>{children}</WrapperClient> :
-            <>{children}</>
-          }
+          <AuthContext session={session}>
+          <WrapperClient segment={segment}>{children}</WrapperClient>
+          </AuthContext>
         </body>
     </html>
   )

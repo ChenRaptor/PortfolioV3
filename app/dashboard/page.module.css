@@ -1,38 +1,114 @@
 .main {
-    background: var(--secondary);
-    width: 100%;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6rem;
+    width: calc(100% - 16rem);
+    min-height: 100vh;
 }
 .section {
-    height: 100%;
+    height: 100vh;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
-.section > aside {
+/*
+.section:nth-of-type(3) {
+    height: 200vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}*/
+
+.container2 {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    gap: 20px 20px;
+    width: 100%;
+    height: 80%;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "logged logged . . . ."
+      "stats stats . . . ."
+      ". . . . . ."
+      ". . . . . ."
+      ". . . . . .";
+  }
+  
+  .logged { 
+    grid-area: logged; 
     background: var(--block);
-    width: 20rem;
-    height: 100%;
+    color: #fff;
+}
+.logged > div {
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    padding: 0 1rem;
+    gap: 0.5rem;
+    color: #fff;
+}
+  
+  .stats { 
+    grid-area: stats; 
+    background: var(--block);
+}
+  
+
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 0.0fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    width: 100%;
+    height: 80%;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "form form form form form other"
+      "project-array project-array project-array project-array project-array other"
+      "project-array project-array project-array project-array project-array other"
+      "project-array project-array project-array project-array project-array other"
+      "project-array project-array project-array project-array project-array other";
+  }
+  
+.project-array { 
+    grid-area: project-array; 
+    background: var(--block);
     display: flex;
     align-items: center;
     flex-direction: column;
 }
-.section > aside > div {
-    width: 80%;
-}
-.section > aside > div > button {
-    background: none;
-    border: none;
+
+.project-array > div { 
     width: 100%;
-}
-.section > aside > div > button > div {
+    height: 2rem;
     display: flex;
     align-items: center;
-    width: 100%;
+    justify-content: center;
 }
-.section > aside > div > button > div > svg {
-    transform: scale(0.5);
-    fill: #ffffff;
+.project-array > div > div:nth-of-type(1) { 
+    flex: 2;
+    
 }
-.section > aside > div > button > div > p {
-    font-size: 1rem;
-    color: #ffffff;
+.project-array > div:nth-of-type(2n + 1) { 
+    background: #22232b;
+}
+.form { 
+    grid-area: form; 
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    /*padding: 0 2rem;*/
+}
+  
+.other { 
+    grid-area: other;
+    background: var(--block);
 }
