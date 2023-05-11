@@ -1,0 +1,108 @@
+:root {
+  --primary: #0b090a;
+  --secondary: #161a1d;
+  --accent: #02c39a;
+  --accent2: #e5383b;
+  --color: #ecedee;
+  --block: #1d1e24;
+  --accent3: #666193;
+
+}
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--primary);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+.main-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-app-whitespace {
+  display: flex;
+  align-items: center;
+  width: 8rem;
+  min-height: 300vh;
+  height: 300vh;
+  max-height: 300vh;
+  flex-direction: column;
+}
+.index {
+  justify-content: center;
+}
+.index > div {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center
+}
+.index > div > p {
+  transform: rotate(90deg);
+  color: #fff;
+  text-align: center;
+  gap: 0.5rem;
+    display: flex;
+}
+
+.btn {
+  border: 0;
+  width: 8rem;
+  height: 3rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background: var(--block);
+  color: var(--color);
+  border: 1px solid #363636;
+  transition: all 0.1s;
+}
+
+.btn:hover {
+  color: #9488ff;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+
+.popup {
+  position: fixed;
+  top: calc(50vh - 10rem);
+  left: calc(50vw - 15rem);
+  width: 30rem;
+  height: 20rem;
+  background: #1d1e24;
+  z-index: 10;
+  border-radius: 0.25rem;
+}
+
+.popup > form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  gap: 1rem;
+  padding: 0 2rem;
+}
+
+.popup > form > input {
+  background: #272932;
+  border: 0;
+  border-radius: 0.25rem;
+  height: 2.5rem;
+  width: 100%;
+  outline: none;
+  text-indent: 1rem;
+  caret-color: #9488ff;
+  color: #9488ff;
+}
