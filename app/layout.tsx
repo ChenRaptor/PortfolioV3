@@ -22,16 +22,16 @@ export default async function RootLayout({
   children: React.ReactNode,
 }) {
 
-  const segment = (children as any)?.props?.childProp.segment;
+  const segment : string = (children as any)?.props?.childProp.segment;
 
   return (
     <html lang="en">
         <body className={inter.className}>
-                {   
-                    protectedSegment[segment] ? 
-                    <WrapperClient>{children}</WrapperClient>:
-                    <WrapperClient>{children}</WrapperClient>
-                }
+          {
+            segment === '__PAGE__' ?
+            <WrapperClient>{children}</WrapperClient> :
+            <>{children}</>
+          }
         </body>
     </html>
   )
