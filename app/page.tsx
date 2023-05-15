@@ -1,4 +1,5 @@
 "use client"
+import WrapperPage from '@/components/Wrapper/Page/main'
 import styles from './page.module.css'
 import dynamic from 'next/dynamic'
 import { Parallax } from 'react-scroll-parallax'
@@ -9,9 +10,12 @@ const CSRCanvas = dynamic(
 )
 
 
+
+
 function Home() {
 
   return (
+    <WrapperPage namePage='home'>
     <main className={styles.main}>
       <section className={styles.section} id='home'>
         <nav>
@@ -81,7 +85,8 @@ function Home() {
         </div>
       </section>
     </main>
-  )
+    </WrapperPage>
+   )
 }
 
 export default Home;

@@ -2,7 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import { Session } from 'next-auth'
 import { headers } from 'next/headers'
-import WrapperClient from '@/components/Wrapper/Client/main'
+//import WrapperClient from '@/components/Wrapper/Client/main'
 import AuthContext from '@/components/Provider/AuthContext'
 
 async function getSession(cookie: string): Promise<Session> {
@@ -13,6 +13,11 @@ async function getSession(cookie: string): Promise<Session> {
   });
 
   const session = await response.json();
+
+  //const shell = require('shelljs')
+  //const path = 'projects'
+  //shell.cd(path)
+  //shell.exec('git clone https://github.com/atomicptr/dauntless-builder')
 
   return Object.keys(session).length > 0 ? session : null;
 }
@@ -37,12 +42,12 @@ export default async function RootLayout({
 
   const session = await getSession(headers().get('cookie') ?? '');
   const segment : string = (children as any)?.props?.childProp.segment;
-
+  const seg : any = (children as any)
   return (
     <html lang="en">
         <body className={inter.className}>
           <AuthContext session={session}>
-          <WrapperClient segment={segment}>{children}</WrapperClient>
+            {children}
           </AuthContext>
         </body>
     </html>

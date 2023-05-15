@@ -5,8 +5,10 @@ import NavAsideHome from "../../NavAside/NavAsideHome";
 import Logo from "../../Logo/Logo";
 import NavAsideDashboard from "@/components/NavAside/NavAsideDashboard";
 
-export default function WrapperClient({children,segment} : any) {
+export default function WrapperClient({seg,children,segment} : any) {
 
+    console.log(seg)
+    console.log(seg.props.childProp.current.props.childProp.segment)
     let listMenu : { [key: string] : () => JSX.Element } = {
       __PAGE__: NavAsideHome,
       dashboard: NavAsideDashboard

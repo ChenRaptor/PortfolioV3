@@ -62,7 +62,7 @@
   
 
 .container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 2fr;
     grid-template-rows: 0.0fr 1fr 1fr 1fr 1fr;
     grid-auto-columns: 1fr;
     width: 100%;
@@ -83,14 +83,18 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    color: #ecedee;
 }
 
 .project-array > div { 
-    width: 100%;
-    height: 2rem;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    height: fit-content;
+    padding: 2rem;
+    width: calc(100% - 4rem);
 }
 .project-array > div > div:nth-of-type(1) { 
     flex: 2;
@@ -111,4 +115,25 @@
 .other { 
     grid-area: other;
     background: var(--block);
+    color: #ecedee;
+    padding: 2rem;
+    width: calc(100% - 4rem);
+}
+.other > h2 { 
+    font-size: 1.2rem;
+}
+
+.project-heading {
+    color: #ecedee;
+}
+
+.project-array > div > div{ 
+    height: fit-content;
+    padding: 1rem 0;
+    font-size: 0.8rem;
+}
+
+.tags {
+    display: flex;
+    gap: 1rem;
 }
