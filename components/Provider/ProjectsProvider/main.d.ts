@@ -14,6 +14,6 @@ export interface Project {
     notifs: any
 }
 
-export type ProjectContextType = {
+export type ProjectsContextType = {
     project: Project
 };

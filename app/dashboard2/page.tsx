@@ -67,8 +67,8 @@ function Dashboard() {
         <div className={styles['project-array']}>
 
 
-            {(projectsContext?.projects ?? []).map((project, index) => 
-                <div>
+            {(projectsContext?.projects ?? []).map((project: any, index: any) => 
+                <div key={index}>
                     <h3 className={styles['project-heading']}>
                         {`${project.name} (${project.visibility})`}
                     </h3>
