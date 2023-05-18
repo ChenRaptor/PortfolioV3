@@ -4,6 +4,7 @@ import { useSession } from 'next-auth/react';
 import { useContext, useEffect } from 'react';
 import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main';
 import styles from './page.module.css'
+import OverviewSection from '@/components/Dashboard/Overview/main';
 const inter = Inter({ subsets: ['latin'] })
 
 
@@ -28,7 +29,7 @@ function Dashboard() {
         <aside>
             <div className={styles.wrapperlogo}>
                 <div>
-                    <button className={styles.btn}>
+                    <button className={styles.btn} onClick={(e) => {e.preventDefault; location.replace('/')}}>
                         <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M480 896 160 576l320-320 42 42-248 248h526v60H274l248 248-42 42Z"/></svg>
                     </button>
                     <div className={styles.logo}>
@@ -54,20 +55,9 @@ function Dashboard() {
             </div>
             <p className={`${inter.className} ${styles.category}`}>SETTINGS</p>
         </aside>
-        <section>
-
-        </section>
+        <OverviewSection/>
     </main>
   )
 }
 
 export default Dashboard;
-
-/*
-transform: scale(0.5);
-    fill: #ffffff;
-
-color: #ffffff;
-padding: 0.25rem 2rem;
-font-size: 0.8rem;
-cursor: pointer;*/
