@@ -1,0 +1,20 @@
+{
+    "login": "ChenRaptor",
+    "id": 60751310,
+    "node_id": "MDQ6VXNlcjYwNzUxMzEw",
+    "avatar_url": "https://avatars.githubusercontent.com/u/60751310?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ChenRaptor",
+    "html_url": "https://github.com/ChenRaptor",
+    "followers_url": "https://api.github.com/users/ChenRaptor/followers",
+    "following_url": "https://api.github.com/users/ChenRaptor/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ChenRaptor/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ChenRaptor/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ChenRaptor/subscriptions",
+    "organizations_url": "https://api.github.com/users/ChenRaptor/orgs",
+    "repos_url": "https://api.github.com/users/ChenRaptor/repos",
+    "events_url": "https://api.github.com/users/ChenRaptor/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ChenRaptor/received_events",
+    "type": "User",
+    "site_admin": false
+}
