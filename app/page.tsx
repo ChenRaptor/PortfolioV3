@@ -14,7 +14,7 @@ const CSRCanvas = dynamic(
 
 
 
-function Home() {
+function HomePage () {
   const { data: session, status: sessionStatus } = useSession();
 
   return (
@@ -23,7 +23,9 @@ function Home() {
       <section className={styles.section} id='home'>
         <nav>
             <a>About me</a>
-            <a>Projects</a>
+            <Link href="/projects">
+              Projects
+            </Link>
             <a>Blog</a>
             <a>Contact</a>
             {session?.user?.role === 'admin' ? 
@@ -97,4 +99,4 @@ function Home() {
    )
 }
 
-export default Home;
+export default HomePage;
