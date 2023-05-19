@@ -4,7 +4,7 @@
 
 .main > aside {
     background: var(--block);
-    width: 18rem;
+    min-width: 18rem;
     height: 100vh;
     border-radius: 0.25rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
@@ -25,78 +25,8 @@
 }
 
 .wrapperlogo {
-    display: flex;
     color: #000000;
-    /* padding: 0 2rem; */
-    /* border-bottom: 1px solid #dbe6ff; */
-    flex-direction: column;
-    align-items: flex-start;
     background: #dbe6ff;
-}
-
-.wrapperlogo > div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.category {
-    color: #afafaf;
-    padding: 1rem 2rem;
-    font-size: 0.8rem;
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 0px 0px;
-}
-
-.subcategory {
-    font-size: 0.9rem;
-}
-
-.mainbutton {
-    height: fit-content;
-    /*border-radius: 0.25rem;*/
-    padding: 0 0rem;
-    /*border: 1px solid var(--accent3);*/
-    color: var(--color);
-    background: #202128;
-}
-
-.mainbutton button {
-    background: none;
-    border: none;
-    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    cursor: pointer;
-    padding: 0.25rem 2rem;
-    gap: 0.5rem;
-}
-.mainbutton button:hover {
-    background: #161615;
-    /*border-radius: 0.25rem;*/
-}
-.mainbutton button > svg {
-    fill: #ffffff;
-    transform: scale(0.475);
-
-}
-.mainbutton button:hover > svg{
-    fill:  #9488ff;
-}
-.mainbutton button > span {
-    color: var(--color);
-}
-.mainbutton button:hover > span {
-    color: #9488ff;
-}
-.btn {
-    background: #202128;
-    border: none;
-    height: 64px;
-    border-radius: 0 0.3rem 0.3rem 0;
-    cursor: pointer;
-}
-.btn > svg{
-    transform: scale(0.5);
-    fill: var(--color);
 }

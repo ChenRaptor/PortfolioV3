@@ -1,0 +1,1 @@
+export type IconType = 'home' | 'project' | 'message' | 'arrowleft' | 'box'

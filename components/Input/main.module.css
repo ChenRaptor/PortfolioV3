@@ -1,0 +1,18 @@
+.main {
+    flex: 8 1;
+    border: 0;
+    width: 8rem;
+    height: 3rem;
+    border-radius: 0.25rem;
+    background: var(--block);
+    color: var(--color);
+    border: 1px solid #363636;
+    transition: all 0.1s;
+    text-indent: 2rem;
+    transition: all 0.2s;
+    outline: 1px solid #161a1d;
+}
+
+.main:focus-visible {
+    outline: 1px solid #9488ff;
+}

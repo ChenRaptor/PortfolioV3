@@ -1,9 +1,17 @@
-export default function DashboardLink () {
+import { Inter } from "next/font/google";
+import Link from "next/link";
+import styles from './main.module.css'
+import { IconType } from "../Icons/type";
+import icons from "../Icons/main";
+
+const inter = Inter({ subsets: ['latin'] })
+
+export default function DashboardLink ({icon, link, name} : {icon: IconType, link: string, name: string}) {
     return (
-        <Link href='/dashboard/overview'>
+        <Link className={styles.main} href={link}>
             <div>
-            <svg xmlns="http://www.w3.org/2000/svg" height="48" viewBox="0 96 960 960" width="48"><path d="M220 876h150V626h220v250h150V486L480 291 220 486v390Zm-60 60V456l320-240 320 240v480H530V686H430v250H160Zm320-353Z"/></svg>
-                <span className={`${inter.className} ${styles.subcategory}`}>Overview</span>
+                {(icons[icon])()}
+                <span className={`${inter.className}`}>{name}</span>
             </div>
         </Link>
     )

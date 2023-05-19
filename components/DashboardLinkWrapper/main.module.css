@@ -1,0 +1,41 @@
+.main > p{
+    color: #afafaf;
+    padding: 1rem 2rem;
+    font-size: 0.8rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 0px 0px;
+}
+.main > div {
+    height: fit-content;
+    color: var(--color);
+    background: #202128;
+}
+
+
+.main > div div {
+    background: none;
+    border: none;
+    width: -webkit-fill-available;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    cursor: pointer;
+    padding: 0.25rem 2rem;
+    gap: 0.5rem;
+}
+.main > div div:hover {
+    background: #161615;
+}
+.main > div div > svg {
+    fill: #ffffff;
+    transform: scale(0.475);
+
+}
+.main > div div:hover > svg{
+    fill:  #9488ff;
+}
+.main > div div > span {
+    color: var(--color);
+}
+.main > div div:hover > span {
+    color: #9488ff;
+}
