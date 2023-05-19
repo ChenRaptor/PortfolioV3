@@ -548,6 +548,7 @@ export function Planet() {
     const meshRef = useRef<any>();
     const clock = new THREE.Clock;
     const animate = () => {
+        if (meshRef.current === null) return;
         meshRef.current.material.uniforms.uTime.value = clock.getElapsedTime();
         requestAnimationFrame( animate );
     }

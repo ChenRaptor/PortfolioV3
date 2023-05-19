@@ -94,6 +94,7 @@
     border: none;
     height: 64px;
     border-radius: 0 0.3rem 0.3rem 0;
+    cursor: pointer;
 }
 .btn > svg{
     transform: scale(0.5);

@@ -4,6 +4,7 @@ import { Session } from 'next-auth'
 import { headers } from 'next/headers'
 import AuthContext from '@/components/Provider/AuthContext'
 import ProjectsProvider from '@/components/Provider/ProjectsProvider/main'
+import DateProvider from '@/components/Provider/DateProvider/main'
 
 
 async function getSession(cookie: string): Promise<Session> {
@@ -33,9 +34,11 @@ export default async function RootLayout({children} : {children: React.ReactNode
         <html lang="en">
             <body className={inter.className}>
                 <AuthContext session={session}>
-                    <ProjectsProvider>
-                        {children}
-                    </ProjectsProvider>
+                    <DateProvider>
+                        <ProjectsProvider>
+                            {children}
+                        </ProjectsProvider>
+                    </DateProvider>
                 </AuthContext>
             </body>
         </html>

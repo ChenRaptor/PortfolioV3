@@ -62,6 +62,7 @@
   border-radius: 0.5rem;
   font-size: 90%;
   width: 8rem;
+  text-decoration: none;
 }
 .section > nav > a:hover{
   color: #9488ff;

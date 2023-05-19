@@ -3,6 +3,8 @@ import WrapperPage from '@/components/Wrapper/Page/main'
 import styles from './page.module.css'
 import dynamic from 'next/dynamic'
 import { Parallax } from 'react-scroll-parallax'
+import { useSession } from 'next-auth/react';
+import Link from 'next/link'
 
 const CSRCanvas = dynamic(
   () => import('../components/scene3D/scene3D'),
@@ -13,6 +15,7 @@ const CSRCanvas = dynamic(
 
 
 function Home() {
+  const { data: session, status: sessionStatus } = useSession();
 
   return (
     <WrapperPage namePage='home'>
@@ -23,6 +26,11 @@ function Home() {
             <a>Projects</a>
             <a>Blog</a>
             <a>Contact</a>
+            {session?.user?.role === 'admin' ? 
+            <Link href="/dashboard/overview">
+              Dashboard
+            </Link> 
+            : null }
         </nav>
         <div className={styles['index-section']}>
           <div className={styles.canvas}><CSRCanvas/></div>

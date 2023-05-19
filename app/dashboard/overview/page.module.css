@@ -1,6 +1,5 @@
 .section {
     padding: 2rem;
-    /* background: red; */
     width: calc(100% - 18rem);
     display: flex;
     flex-direction: column;

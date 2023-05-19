@@ -1,5 +1,6 @@
+"use client"
 import { useSession } from 'next-auth/react';
-import styles from './main.module.css'
+import styles from './page.module.css'
 import DateTime from '@/components/DateTime/main';
 
 export default function OverviewSection () {
