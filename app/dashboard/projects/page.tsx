@@ -2,12 +2,18 @@
 import Input from '@/components/Input/main'
 import styles from './page.module.css'
 import Button from '@/components/Button/main'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main'
 import TagLanguage from '@/components/TagLanguage/TagLanguage'
+import { useRouter } from 'next/navigation';
 
 export default function ProjectsSection () {
     const projectsContext = useContext<any | null>(ProjectsContext) as any
+
+    const router = useRouter();
+    useEffect(() => {
+        console.log(projectsContext.projects)
+      },[projectsContext])
 
     return (
         <section className={styles.section}>
@@ -22,15 +28,15 @@ export default function ProjectsSection () {
 
             <div className={styles.container}>
             {(projectsContext?.projects ?? []).map((project: any, index: any) => 
-                <div key={index}>
-                    <div>
-                        <h3>{`${project.name} (${project.visibility})`}</h3>
-                        <p>{project.description}</p>
+                    <div key={index} onClick={() => router.push(`/dashboard/projects/${project.name}`)}>
+                        <div>
+                            <h3>{`${project.name} (${project.visibility})`}</h3>
+                            <p>{project.description}</p>
+                        </div>
+                        <div className={styles.tags}>
+                            { project.language ? <TagLanguage language={project.language}/> : null }<p className={styles.updated}>{`Updated at: ${project.updated_at}`}</p>
+                        </div>
                     </div>
-                    <div className={styles.tags}>
-                        { project.language ? <TagLanguage language={project.language}/> : null }<p className={styles.updated}>{`Updated at: ${project.updated_at}`}</p>
-                    </div>
-                </div>
             )}
             </div>
         </section>
