@@ -28,11 +28,12 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
     return (
         <section className={styles.section}>
             <h2>{params.slug}</h2>
-            <span>Language</span>
+
+            <span>Languages</span>
             <div className={styles.languages}>
                 { languages ? <ChartDonut chartID='oklp' data={languages}/> : null}
             </div>
-            <SpanGroup textButton='Deploy now'><span>Visibility:</span><Font color='fade'>private (default: private)</Font></SpanGroup>
+            <SpanGroup textButton='Make it visible'><span>Visibility:</span><Font color='fade'>private (default: private)</Font></SpanGroup>
             <SpanGroup textButton='Deploy now'><span>Status:</span><Font color='fade'>not deployed</Font></SpanGroup>
         </section>
     );
