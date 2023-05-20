@@ -1,18 +1,35 @@
 :root {
   --primary: #0b090a;
   --secondary: #161a1d;
-  --accent: #02c39a;
   --accent2: #e5383b;
   --color: #ecedee;
   --block: #1d1e24;
   --accent3: #666193;
 
+
+  /* website color */
+  /* accent */
+  --accent: #b0a7ff;
+  --accent-variant-0: #666193;
+
+  /* block */
+  --block: #1d1e24;
 }
+
+
+
+
+
+
+
+
+
 * {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
   outline: none;
+  color: var(--color);
 }
 
 body {
@@ -61,7 +78,6 @@ body {
   border-radius: 0.25rem;
   cursor: pointer;
   background: var(--block);
-  color: var(--color);
   border: 1px solid #363636;
   transition: all 0.1s;
 }
@@ -73,7 +89,6 @@ body {
   border-radius: 0.25rem;
   cursor: pointer;
   background: #796aff;
-  color: #ffffff;
   border: 1px solid #363636;
   transition: all 0.1s;
 }
@@ -130,7 +145,6 @@ body {
   height: 3rem;
   border-radius: 0.25rem;
   background: var(--block);
-  color: var(--color);
   border: 1px solid #363636;
   transition: all 0.1s;
   text-indent: 2rem;

@@ -1,10 +1,10 @@
 "use client"
-import WrapperPage from '@/components/Wrapper/Page/main'
 import styles from './page.module.css'
 import dynamic from 'next/dynamic'
 import { Parallax } from 'react-scroll-parallax'
 import { useSession } from 'next-auth/react';
 import Link from 'next/link'
+import WrapperPage from '@/components/WrapperPage/main';
 
 const CSRCanvas = dynamic(
   () => import('../components/scene3D/scene3D'),

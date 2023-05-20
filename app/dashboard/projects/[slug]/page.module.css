@@ -1,0 +1,9 @@
+.section {
+    padding: 2rem;
+    width: calc(100% - 18rem);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: scroll;
+    max-height: calc(100vh - 4rem);
+}

@@ -6,7 +6,6 @@
 }
 .main > div {
     height: fit-content;
-    color: var(--color);
     background: #202128;
 }
 
@@ -32,9 +31,6 @@
 }
 .main > div div:hover > svg{
     fill:  #9488ff;
-}
-.main > div div > span {
-    color: var(--color);
 }
 .main > div div:hover > span {
     color: #9488ff;

@@ -1,9 +1,8 @@
 "use client"
-import WrapperPage from "@/components/Wrapper/Page/main";
-import { ParallaxProvider } from "react-scroll-parallax";
 import styles from './page.module.css'
 import Link from "next/link";
 import { useSession } from "next-auth/react";
+import WrapperPage from "@/components/WrapperPage/main";
 
 export default function ProjectsPage () {
     const { data: session, status: sessionStatus } = useSession();
@@ -29,6 +28,9 @@ export default function ProjectsPage () {
                         </Link> 
                         : null }
                     </nav>
+                    <div className={styles.glassmorphism}>
+
+                    </div>
                 </section>
             </main>
         </WrapperPage>

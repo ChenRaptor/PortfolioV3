@@ -25,8 +25,11 @@
 }
 
 .wrapperlogo {
-    color: #000000;
-    background: #dbe6ff;
+    background: var(--accent);
     display: flex;
     align-items: center;
+}
+
+.wrapperlogo > p {
+    color: #000;
 }

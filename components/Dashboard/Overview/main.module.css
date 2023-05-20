@@ -6,12 +6,7 @@
     flex-direction: column;
     gap: 2rem;
 }
-
-.breadcrumb {
-    color: var(--color);
-}
 .welcomer {
-    color: var(--color);
     font-size: 3rem;
     display: flex;
     gap: 1rem;
@@ -25,7 +20,6 @@
 .opp {
     display: flex;
     justify-content: space-between;
-    color: var(--color);
 }
 
 .opp > div, .opp > p {
