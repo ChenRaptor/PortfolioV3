@@ -22,6 +22,9 @@ function HomePage () {
     <main className={styles.main}>
       <section className={styles.section} id='home'>
         <nav>
+            <Link href="/" className={styles.activated}>
+              Home
+            </Link>
             <a>About me</a>
             <Link href="/projects">
               Projects

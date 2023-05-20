@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styles from './NavAside.module.css'
 
-export default function NavAsideHome() {
+export default function NavAsideProjects() {
     return (
         <div className={styles.main}>
             <button onClick={(e) => {e.preventDefault; location.replace('/#home')}}>

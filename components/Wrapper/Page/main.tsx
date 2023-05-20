@@ -4,6 +4,7 @@ import ClientOption from "../../ClientOption/ClientOption";
 import NavAsideHome from "../../NavAside/NavAsideHome";
 import Logo from "../../Logo/Logo";
 import NavAsideDashboard from "@/components/NavAside/NavAsideDashboard";
+import NavAsideProjects from "@/components/NavAside/NavAsideProjects";
 
 
 
@@ -13,6 +14,7 @@ export default function WrapperPage({children,namePage} : any) {
     const listMenu : { [key: string] : () => JSX.Element } = {
       home: NavAsideHome,
       dashboard: NavAsideDashboard,
+      projects: NavAsideProjects,
       dashboard_addproject: () => <></>,
     }
 
@@ -22,6 +24,10 @@ export default function WrapperPage({children,namePage} : any) {
             <div><p><span>SCROLL</span><span>DOWN</span></p></div>
             <div></div>
             <div></div>
+        </>,
+        projects: 
+        <>
+          <div></div>
         </>,
         dashboard: 
         <>
