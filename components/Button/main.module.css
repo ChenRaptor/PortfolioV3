@@ -5,18 +5,17 @@
     border-radius: 0.25rem;
     cursor: pointer;
     background: var(--block);
-    color: var(--color);
     border: 1px solid #363636;
     transition: all 0.1s;
     flex: 1 1;
 }
 .cta {
     background: #796aff;
-    color: #ffffff;
+    color: #fff;
 }
 .main:hover.cta {
     background: #5e4dff;
-    color: #ffffff;
+    color: #fff;
 }
 
 .main:hover {
