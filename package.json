@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@amcharts/amcharts5": "^5.3.12",
+    "@amcharts/amcharts5-fonts": "^5.0.1",
+    "@amcharts/amcharts5-geodata": "^5.1.0",
     "@react-three/drei": "^9.68.1",
     "@react-three/fiber": "^8.13.0",
     "@types/node": "20.1.2",

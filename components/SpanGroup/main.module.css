@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    align-items: center;
+}
+.main > button {
+    max-width: 8rem;
+}
+.main > div {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 400px;
+}

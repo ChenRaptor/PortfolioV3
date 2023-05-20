@@ -6,6 +6,7 @@ import WrapperPage from "@/components/WrapperPage/main";
 
 export default function ProjectsPage () {
     const { data: session, status: sessionStatus } = useSession();
+
     return (
         <WrapperPage namePage="projects">
             <main className={styles.main}>

@@ -7,3 +7,9 @@
     overflow: scroll;
     max-height: calc(100vh - 4rem);
 }
+.languages {
+    width: 400px;
+    height: 200px;
+    background: var(--block);
+    border-radius: 0.25rem;
+}

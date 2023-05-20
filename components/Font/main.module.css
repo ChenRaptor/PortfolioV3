@@ -1,0 +1,20 @@
+.info {
+    color: blue;
+}
+.warning {
+    color: orange;
+}
+.error {
+    color: red;
+}
+.success {
+    color: green;
+}
+.fade {
+    color: #a6a6a6;
+}
+
+.embed {
+    border: 1px solid black;
+    border-radius: 0.25rem;
+}
