@@ -11,5 +11,3 @@ export type DateContextType = {
     isOffDay: () => string
     getNumericDate: () => string
 };
-
-

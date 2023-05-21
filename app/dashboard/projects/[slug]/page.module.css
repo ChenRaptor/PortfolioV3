@@ -7,9 +7,33 @@
     overflow: scroll;
     max-height: calc(100vh - 4rem);
 }
-.languages {
+.block:nth-of-type(1) > div {
+    width: 600px;
+    padding: 0 1.25rem;
+}
+.container {
+    padding: 0.5rem 0;
+    height: -webkit-fill-available;
+}
+.block > div{
     width: 400px;
     height: 200px;
     background: var(--block);
     border-radius: 0.25rem;
+}
+.block > h2 {
+    width: 400px;
+    height: -moz-fit-content;
+    height: fit-content;
+    /* background: #868a9f; */
+    /* border-radius: 0.25rem; */
+    padding: 0 2rem;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 1rem 0;
+    /* width: 100%; */
+}
+.row {
+    display: flex;
+    gap: 2rem;
 }
