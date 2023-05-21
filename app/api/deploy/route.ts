@@ -16,5 +16,5 @@ export async function GET(request: Request) {
         console.log(`stdout: ${stdout}`);
     });
  
-  return NextResponse.json(valid);
+  return NextResponse.json({msg: valid});
 }
