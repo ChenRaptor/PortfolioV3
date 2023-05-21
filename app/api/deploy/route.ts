@@ -1,19 +1,24 @@
 import { NextResponse } from 'next/server';
- export async function GET(request: Request) {
-    const { exec } = require("child_process");
-    let valid = null;
-    exec("ls -la", (error: any, stdout: any, stderr:any) => {
-        if (error) {
-            valid = `error: ${error.message}`
-            console.log(`error: ${error.message}`);
-        }
-        if (stderr) {
-            valid = `stderr: ${stderr}`
-            console.log(`stderr: ${stderr}`);
-        }
-        valid = `stdout: ${stdout}`
-        console.log(`stdout: ${stdout}`);
+import { exec } from 'child_process';
+
+function execPromise(command: string) {
+    return new Promise(function(resolve, reject) {
+        exec(command, (error: any, stdout: any, stderr: any) => {
+            if (error) {
+                console.log(error)
+                reject(error);
+                return;
+            }
+            console.log(stdout);
+            resolve('ok');
+        });
     });
- 
-  return NextResponse.json(valid);
+}
+
+export async function GET(request: Request) {
+    const { searchParams } = new URL(request.url);
+    const name = searchParams.get('name');
+    console.log(name);
+    execPromise("cd ../../ && ls -la")
+    return NextResponse.json({state: 'ok'})
 }

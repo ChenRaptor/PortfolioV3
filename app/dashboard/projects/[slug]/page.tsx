@@ -41,14 +41,14 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
                     <div>
                         <div className={styles.container}>
                             <SpanGroup textButton='Make it visible'><span>Visibility:</span><Font color='fade'>private (default: private)</Font></SpanGroup>
-                            <SpanGroup textButton='Deploy now'><span>Status:</span><Font color='fade'>not deployed</Font></SpanGroup>
+                            <SpanGroup onClick={() => fetch(`/api/deploy?name=${params.slug}`)} textButton='Deploy now'><span>Status:</span><Font color='fade'>not deployed</Font></SpanGroup>
                         </div>
                     </div>
                 </div>
                 <div className={styles.block}>
                     <h2>Languages</h2>
                     <div>
-                        { languages ? <ChartDonut chartID='oklp' data={languages}/> : null }
+                        { languages ? <ChartDonut chartID='languagesChart' data={languages}/> : null }
                     </div>
                 </div>
             </div>

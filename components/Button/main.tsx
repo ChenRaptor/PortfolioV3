@@ -1,7 +1,8 @@
+import { ArrowFunction } from 'typescript'
 import styles from './main.module.css'
 
-export default function Button ({children, cta} : {children: React.ReactElement | string, cta?: boolean}) {
+export default function Button ({children, cta, onClick} : {children: React.ReactElement | string, cta?: boolean, onClick?: any}) {
     return (
-        <button className={`${styles.main} ${cta ? styles.cta : ''}`}>{children}</button>
+        <button onClick={onClick} className={`${styles.main} ${cta ? styles.cta : ''}`}>{children}</button>
     )
 }
