@@ -8,15 +8,15 @@ export async function GET(request: Request) {
     const repos = searchParams.get('repos');
 
     const octokit = new Octokit({
-        auth: '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'
-    })
-
-    const value = await octokit.request('GET /repos/ChenRaptor/{repos}/languages', {
+        auth: process.env.GITHUB_TOKEN
+      })
+    
+      const value = await octokit.request('GET /repos/ChenRaptor/{repos}/languages', {
         repos,
         headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
+          'X-GitHub-Api-Version': '2022-11-28'
         }
-    })
-  
-  return NextResponse.json(value.data);
+      })
+    
+      return NextResponse.json(value.data);
 }

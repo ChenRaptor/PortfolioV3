@@ -14,7 +14,7 @@ function updateReposFile(content : any) {
 export async function GET(request: Request) {
 
   const octokit = new Octokit({
-    auth: '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'
+    auth: process.env.GITHUB_TOKEN
   })
 
   const value = await octokit.request('GET /user/repos?type={type}', {
