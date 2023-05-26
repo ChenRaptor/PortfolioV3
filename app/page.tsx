@@ -29,7 +29,9 @@ function HomePage () {
             <Link href="/projects">
               Projects
             </Link>
-            <a>Blog</a>
+            <Link href="/blog">
+              Blog
+            </Link>
             <a>Contact</a>
             {session?.user?.role === 'admin' ? 
             <Link href="/dashboard/overview">

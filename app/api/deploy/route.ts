@@ -19,6 +19,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url);
     const name = searchParams.get('name');
     console.log(name);
-    execPromise(`cd ../../ && git clone https://ChenRaptor:${process.env.GITHUB_TOKEN}@github.com/ChenRaptor/${name} ${name}`)
+    execPromise(`portfolio 4001 ${name?.toLowerCase} https://ChenRaptor:${process.env.GITHUB_TOKEN}@github.com/ChenRaptor/${name}`)
+    //execPromise(`cd ../../ && git clone https://ChenRaptor:${process.env.GITHUB_TOKEN}@github.com/ChenRaptor/${name} ${name}`)
     return NextResponse.json({state: 'ok'})
 }
