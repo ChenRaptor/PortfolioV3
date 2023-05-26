@@ -1,0 +1,42 @@
+.main {
+    // position: absolute;
+    // top: 1rem;
+    left: 14rem;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    border-radius: 0.5rem;
+
+    a {
+        color: $color-base-font-variant1;
+        cursor: pointer;
+        background: $color-primary;
+        height: 3rem;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+        width: 8rem;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary-border;
+    }
+
+    a.activated {
+        border-bottom: 1px solid $color-accent;
+        background: $color-primary-activated;
+    }
+
+    a:first-of-type {
+        border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    a:last-of-type {
+        border-radius: 0 0.25rem 0.25rem 0;
+    }
+
+    a:hover {
+        color: $color-accent-variant2;
+    }
+}

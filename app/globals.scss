@@ -1,41 +1,23 @@
-:root {
-  --primary: #0b090a;
-  --secondary: #161a1d;
-  --accent2: #e5383b;
-  --color: #ecedee;
-  --block: #1d1e24;
-  --accent3: #666193;
-
-
-  /* website color */
-  /* accent */
-  --accent: #b0a7ff;
-  --accent-variant-0: #666193;
-
-  /* block */
-  --block: #1d1e24;
+html {
+  scroll-behavior: smooth;
 }
-
-
-
-
-
-
-
 
 
 * {
   margin: 0;
   padding: 0;
-  scroll-behavior: smooth;
   outline: none;
-  color: var(--color);
 }
 
 body {
-  background: var(--secondary);
-  scroll-behavior: smooth;
+  background: $color-background;
+  /* background: $primary-color; */
   overflow-x: hidden;
+  color: $color-base-font;
+}
+
+a, button {
+  color: inherit;
 }
 
 .main-app {

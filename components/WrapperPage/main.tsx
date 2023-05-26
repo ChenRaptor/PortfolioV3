@@ -26,6 +26,11 @@ const lib : {[key: string] : {
         </>,
         height: '3',
     },
+    blog: {
+        component1: () => <></>,
+        component2: <></>,
+        height: '1',
+    },
     projects: {
         component1: NavAsideProjects,
         component2: <></>,

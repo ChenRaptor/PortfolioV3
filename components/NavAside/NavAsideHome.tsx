@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styles from './NavAside.module.css'
+import styles from './NavAside.module.scss'
 
 export default function NavAsideHome() {
     return (

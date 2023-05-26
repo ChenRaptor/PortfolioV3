@@ -1,11 +1,10 @@
 .main {
-    background: var(--block);
+    background: $color-primary;
     width: 4rem;
     height: fit-content;
     border-radius: 0.25rem;
     position: fixed;
     top: 6rem;
-    /*border: 1px solid var(--accent3);*/
 }
 
 .main button {
@@ -23,9 +22,9 @@
     border-radius: 0.25rem;
 }
 .main button > svg {
-    fill: #ffffff;
+    fill: $color-base-font-variant1;
     transform: scale(0.5)
 }
 .main button:hover > svg{
-    fill:  #9488ff;
+    fill: $color-accent-variant2;
 }

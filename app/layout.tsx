@@ -1,4 +1,4 @@
-import './globals.css'
+import './globals.scss'
 import { Inter } from 'next/font/google'
 import { Session } from 'next-auth'
 import { headers } from 'next/headers'

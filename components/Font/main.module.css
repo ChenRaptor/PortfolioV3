@@ -18,3 +18,14 @@
     border: 1px solid black;
     border-radius: 0.25rem;
 }
+
+.color-orange {
+    background-image: linear-gradient(rgb(243, 101, 52) 25%, rgb(246, 159, 39) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.color-cyan {
+  background-image: linear-gradient(rgb(0, 183, 250) 25%, rgb(1, 207, 234) 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

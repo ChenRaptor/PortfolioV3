@@ -27,7 +27,7 @@ export default function ProjectsSection () {
             </div>
 
             <div className={styles.container}>
-            {(projectsContext?.projects ?? []).map((project: any, index: any) => 
+            {(projectsContext?.projects ?? []).map((project: any, index: number) => 
                     <div key={index} onClick={() => router.push(`/dashboard/projects/${project.name}`)}>
                         <div>
                             <h3>{`${project.name} (${project.visibility})`}</h3>
