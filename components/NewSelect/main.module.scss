@@ -1,0 +1,85 @@
+.main {
+    position: relative;
+    width: 200px;
+    user-select: none;
+    &-select-btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: $color-primary;
+        width: 100%;
+        height: 48px;
+        border: 1px solid #303030;
+
+        span {
+            width: 100%;
+            text-align: center;
+        }
+
+        svg {
+            scale: 0.5;
+            fill: $color-base-font;
+        }
+    }
+    &-content {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background: $color-primary;
+        width: 100%;
+        height: fit-content;
+        top: 72px;
+        gap: 10px;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+
+        .search {
+            background: $color-primary;
+            display: flex;
+            height: 2rem;
+            width: 100%;
+            border: 1px solid #6673bf;
+            input {
+                box-sizing: border-box;
+                height: 40px;
+                font-size: 14px;
+                padding: 0.7rem 0;
+                border: 0;
+                width: 100%;
+                background: #23242c;
+                transition: all 0.1s;
+                text-indent: 1rem;
+                transition: all 0.2s;
+                outline: none;
+                border-bottom: 1px solid #363636;
+            
+
+                // &:focus-visible {
+                //     outline: 1px solid #9488ff;
+                // }
+            }
+            svg {
+                height: 24px;
+                width: 24px;
+                fill: $color-base-font;
+            }
+        }
+
+        .options {
+            width: 100%;
+
+            li {
+                list-style-type: none;
+                font-size: 14px;
+                padding: 0.7rem 0;
+                text-indent: 1rem;
+                background: $color-primary;
+                cursor: pointer;
+
+                &:hover {
+                    background: #23242c
+                }
+            }
+        }
+    }
+}

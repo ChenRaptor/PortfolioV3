@@ -10,6 +10,17 @@
     transition: all 0.1s;
     flex: 1 1;
 }
+.main2 {
+    border: 0;
+    width: 8rem;
+    height: 3rem;
+    max-height: 3rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    background: $color-primary;
+    border: 1px solid #363636;
+    transition: all 0.1s;
+}
 .cta {
     background: #796aff;
     color: #fff;

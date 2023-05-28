@@ -1,3 +1,5 @@
+import ExpandMoreIcon from "./ExpandMore/main";
+import SearchIcon from "./Search/main";
 import ArrowLeftIcon from "./arrowleft/main";
 import BoxIcon from "./box/main";
 import HomeIcon from "./home/main";
@@ -9,7 +11,9 @@ const icons : {[key: string]: () => JSX.Element}= {
     project: ProjectIcon,
     message: MessageIcon,
     arrowleft: ArrowLeftIcon,
-    box: BoxIcon
+    box: BoxIcon,
+    expandmore: ExpandMoreIcon,
+    search: SearchIcon,
 }
 
 export default icons;

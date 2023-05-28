@@ -1,1 +1,1 @@
-export type IconType = 'home' | 'project' | 'message' | 'arrowleft' | 'box'
+export type IconType = 'home' | 'project' | 'message' | 'arrowleft' | 'box' | 'expandmore' | 'search'

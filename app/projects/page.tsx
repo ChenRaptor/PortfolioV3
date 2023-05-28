@@ -1,5 +1,5 @@
 "use client"
-import styles from './page.module.css'
+import styles from './page.module.scss'
 import WrapperPage from "@/components/WrapperPage/main";
 import NavBar from '@/components/NavBar/main';
 

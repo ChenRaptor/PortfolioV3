@@ -18,13 +18,13 @@ const lib : {[key: string] : {
 }} = {
     home: {
         component1: NavAsideHome,
-        component2:         
-        <>
-            <div><p><span>SCROLL</span><span>DOWN</span></p></div>
-            <div></div>
-            <div></div>
-        </>,
-        height: '3',
+        component2:  <></>,   
+        // <>
+        //     <div><p><span>SCROLL</span><span>DOWN</span></p></div>
+        //     <div></div>
+        //     <div></div>
+        // </>,
+        height: '1',
     },
     blog: {
         component1: () => <></>,

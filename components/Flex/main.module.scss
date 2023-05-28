@@ -1,0 +1,11 @@
+.main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    div {
+        flex: 1;
+        height: 200px;
+        background: $color-primary;
+    }
+}
