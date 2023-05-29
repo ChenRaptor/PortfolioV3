@@ -31,7 +31,7 @@ export default async function RootLayout({children} : {children: React.ReactNode
     const session = await getSession(headers().get('cookie') ?? '');
 
     return (
-        <html lang="en">
+        <html lang="en" className={inter.className}>
             <body className={inter.className}>
                 <AuthContext session={session}>
                     <DateProvider>

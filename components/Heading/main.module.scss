@@ -16,4 +16,10 @@
 .title-page {
     font-weight: 500;
     font-size: 1.2rem;
+    background: linear-gradient(180deg,#fff 0%,rgba(255,255,255,.7) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: block;
 }

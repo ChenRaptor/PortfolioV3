@@ -1,13 +1,17 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 body {
-  color: $color-base-font;
-  background: $color-background;
+  color: #efedfdb3;
+  background: linear-gradient(180deg, rgb(22 20 34) 0%, rgb(0 0 0) 100%);
   width: 100%;
   height: 100%;
   overflow-x: hidden;
+  background-attachment: fixed;
 }
 a, button, input, select, textarea {
   color: inherit;

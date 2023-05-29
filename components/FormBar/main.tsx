@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
+import styles from './main.module.scss'
 
 export default function Form({defaultValues, children, onSubmit, submitOnChange, flex } : {
   defaultValues?: any, 
@@ -9,7 +10,6 @@ export default function Form({defaultValues, children, onSubmit, submitOnChange,
   flex?: boolean
 }) {
     const { handleSubmit, register, watch, control } = useForm({ defaultValues });
-    const style = flex? { display: "flex" } : {};
 
 
     submitOnChange ?
@@ -26,7 +26,7 @@ export default function Form({defaultValues, children, onSubmit, submitOnChange,
 
 
     return (
-      <form style={style} onSubmit={handleSubmit(onSubmit)}>
+      <form className={styles.main} onSubmit={handleSubmit(onSubmit)}>
         {Array.isArray(children)
           ? children.map((child) => 
           { return child.props.name
