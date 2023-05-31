@@ -1,10 +1,10 @@
 "use client"
-import Input from '@/components/Input/main'
+import Input from '@/components/Input/TextField/main'
 import styles from './page.module.css'
-import Button from '@/components/Button/main'
+import Button from '@/components/Input/Button/main'
 import { useContext, useEffect } from 'react'
 import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main'
-import TagLanguage from '@/components/TagLanguage/TagLanguage'
+import TagLanguage from '@/components/Display/TagLanguage/TagLanguage'
 import { useRouter } from 'next/navigation';
 
 export default function ProjectsSection () {
@@ -19,7 +19,6 @@ export default function ProjectsSection () {
         <section className={styles.section}>
             <div>
                 <div className={styles.search}>
-                    <Input/>
                     <Button>Language</Button>
                     <Button>Sort</Button>
                     <Button cta>Actualise</Button>

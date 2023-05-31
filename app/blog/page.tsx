@@ -1,38 +1,34 @@
 "use client"
-import Button from '@/components/Button/main';
-import Heading from '@/components/Heading/main';
+import Button from '@/components/Input/Button/main';
+import Heading from '@/components/Display/Heading/main';
 import ClassicLayout from '@/components/Layout/Classic/main';
 import styles from './page.module.scss';
-import dynamic from 'next/dynamic';
 import { useSession } from 'next-auth/react';
-import Input from '@/components/Input/main';
-import Select from '@/components/Select/main';
-import FormBar from '@/components/FormBar/main';
-
-
-const CSRCanvas = dynamic(
-  () => import('@/components/scene3D/scene3D'),
-  { ssr: false }
-)
+import Input from '@/components/Input/TextField/main';
+import Select from '@/components/Input/Select/main';
+import FormBar from '@/components/Input/FormBar/main';
+import Spinner from '@/components/Display/Spinner/main';
 
 function BlogPage() {
   const { data: session, status: sessionStatus } = useSession();
 
-  const onSubmit = (e:any) => {e.preventDefault; console.log(e)};
+  const onSubmit = (e:any) => {console.log(e)};
+
 
   return (
     <ClassicLayout>
-        <ClassicLayout.FirstSection currentPage='blog' controls={
-          <div className={styles.controller}>
-            <p>Last Activity: <time>5 days ago</time></p>
-            {
-              session?.user ? <Button style={{minWidth: '12rem'}}>Create a new article</Button> : null
-            }
-          </div>
-        }>
-          <h1 className={styles.AnnoncerTitle}>Welcome to my blog!</h1>
+        <ClassicLayout.FirstSection currentPage='blog' controls={[
+            <div key='fefrgth58c' className={styles.controller}>
+                <p>Last Activity: <time>5 days ago</time></p>
+                { session?.user ? <Button style={{minWidth: '12rem'}}>Create a new article</Button> : null }
+            </div>,
+            <>
+                <h1 key='fefrgth58cd' className={styles.AnnoncerTitle}>Welcome to my blog!</h1>
+                <p key='fefrgth58cdd'>This is where I share my web development journey, my thoughts and experiences in the exciting world of website and web application creation.</p>
+            </>
+        ]}>
 
-          <p>This is where I share my web development journey, my thoughts and experiences in the exciting world of website and web application creation.</p>
+            
         <Heading type='h2'>Last article</Heading>
         <div className={styles.container}>
           <div className={styles.a1}></div>
@@ -43,18 +39,15 @@ function BlogPage() {
         </ClassicLayout.FirstSection>
         <ClassicLayout.Section>
           <Heading type='h2'>Other article</Heading>
-          <FormBar onSubmit={onSubmit} submitOnChange>
+          <FormBar onSubmit={onSubmit}>
             <Input flex={5} placeholder='search' name="search" />
             <Select flex={1} options={[{
-                value: 'female',
-                label: 'Female' 
+                value: 'creation_date_superior',
+                label: 'Sort by: creation date >' 
                 },{
-                value:'male',
-                label:'Male'
-                },{
-                value: 'other',
-                label: 'Other'
-            }]}
+                value: 'creation_date_inferior',
+                label: 'Sort by: creation date <' 
+                }]}
             name="sort"/>
             <Select flex={1} options={[{
                 value: 'female',
@@ -84,7 +77,6 @@ function BlogPage() {
         <div className={styles.pagination}>
             <div></div>
         </div>
-
         </ClassicLayout.Section>
     </ClassicLayout>
   );

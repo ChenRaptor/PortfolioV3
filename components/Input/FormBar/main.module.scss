@@ -1,0 +1,41 @@
+.main {
+    display: flex;
+    gap: 10px;
+
+    > input {
+        flex: 8 1;
+        border: 0;
+        width: 8rem;
+        height: 3rem;
+        border-radius: 0.25rem;
+        background: #6e76871f;
+        border: 1px solid #ffffff00;
+        transition: all 0.1s;
+        text-indent: 2rem;
+        transition: all 0.2s;
+        outline: 0px solid #161a1d;
+        caret-color: $color-accent;
+        font-size: 0.9rem;
+        // border-right: 0;
+    }
+
+    > input:focus-visible {
+        outline: 0px solid #161a1d;
+        border: 1px solid #b0a7ff4a;
+        background: #2e2b4475;
+        // border-right: 0;
+        // border-radius: 0.25rem 0 0 0.25rem;
+    }
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #1d1e24;
+        width: 100%;
+        border-radius: 0.25rem;
+        height: 48px;
+        border: 1px solid #363636;
+        font-size: 0.8rem;
+    }
+}

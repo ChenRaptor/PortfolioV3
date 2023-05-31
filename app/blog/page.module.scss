@@ -27,7 +27,11 @@
     "a1 a1 a1 a4 a4 a4";
 
   div {
-    background: #1d1e2442;
+
+    // background: #1d1e2442;
+    background: rgb(57 60 76 / 26%);
+
+
     /* background: rgba( 255, 255, 255, 0.25 ); */
     /* box-shadow: 0 8px 32px 0 rgb(176 167 255 / 4%); */
     backdrop-filter: blur( 4px );
@@ -61,7 +65,10 @@
     min-width: calc(calc(100% / 4) - 15px);
     max-width: calc(calc(100% / 4) - 15px);
     flex: 1;
-    background: rgba(29, 30, 36, 0.2588235294);
+
+    // background: rgba(29, 30, 36, 0.2588235294);
+    background: rgb(57 60 76 / 26%);
+
     /* background: rgba( 255, 255, 255, 0.25 ); */
     /* box-shadow: 0 8px 32px 0 rgb(176 167 255 / 4%); */
     backdrop-filter: blur(4px);
@@ -96,4 +103,5 @@
   color: transparent;
   -webkit-text-fill-color: transparent;
   display: block;
+  padding: 20px 0;
 }

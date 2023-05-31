@@ -1,14 +1,14 @@
 "use client"
-import Button from '@/components/Button/main';
-import Font from '@/components/Font/main';
-import Heading from '@/components/Heading/main';
+import Button from '@/components/Input/Button/main';
+import Font from '@/components/Display/Font/main';
+import Heading from '@/components/Display/Heading/main';
 import ClassicLayout from '@/components/Layout/Classic/main';
 import { Parallax } from 'react-scroll-parallax';
 import styles from './page.module.scss';
 import dynamic from 'next/dynamic';
 
 const CSRCanvas = dynamic(
-  () => import('@/components/scene3D/scene3D'),
+  () => import('@/components/Surfaces/scene3D/scene3D'),
   { ssr: false }
 )
 

@@ -1,9 +1,9 @@
 "use client"
 import styles from './layout.module.css'
-import DashboardLink from '@/components/DashboardLink/main';
-import DashboardLinkWrapper from '@/components/DashboardLinkWrapper/main';
+import DashboardLink from '@/components/Layout/Dashboard/DashboardLink/main';
+import DashboardLinkWrapper from '@/components/Layout/Dashboard/DashboardLinkWrapper/main';
 import BoxIcon from '@/components/Icons/box/main';
-import IconLink from '@/components/IconLink/main';
+import IconLink from '@/components/Navigation/IconLink/main';
 
 
 export default function DashboardLayout ({children} : {children: React.ReactNode}) {

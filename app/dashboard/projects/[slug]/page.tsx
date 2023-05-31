@@ -1,9 +1,9 @@
 "use client"
 import styles from './page.module.css'
-import SpanGroup from '@/components/SpanGroup/main';
-import Font from '@/components/Font/main';
+import SpanGroup from '@/components/display/SpanGroup/main';
+import Font from '@/components/display/Font/main';
 import { useContext, useEffect, useState } from 'react';
-import ChartDonut from '@/components/ChartDonut/main';
+import ChartDonut from '@/components/chart/ChartDonut/main';
 import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main';
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
