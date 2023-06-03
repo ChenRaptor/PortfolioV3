@@ -4,7 +4,7 @@ import SpanGroup from '@/components/display/SpanGroup/main';
 import Font from '@/components/display/Font/main';
 import { useContext, useEffect, useState } from 'react';
 import ChartDonut from '@/components/chart/ChartDonut/main';
-import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main';
+import { ProjectsContext } from '@/components/Provider/Projects/main';
 
 export default function ProjectPage({ params }: { params: { slug: string } }) {
 

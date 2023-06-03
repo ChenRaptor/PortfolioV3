@@ -3,7 +3,7 @@ import Input from '@/components/Input/TextField/main'
 import styles from './page.module.css'
 import Button from '@/components/Input/Button/main'
 import { useContext, useEffect } from 'react'
-import { ProjectsContext } from '@/components/Provider/ProjectsProvider/main'
+import { ProjectsContext } from '@/components/Provider/Projects/main'
 import TagLanguage from '@/components/Display/TagLanguage/TagLanguage'
 import { useRouter } from 'next/navigation';
 

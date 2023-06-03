@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { DateContext, DateContextType } from "@/components/Provider/DateProvider/main";
+import { DateContext, DateContextType } from "@/components/Provider/Date/main";
 import styles from './main.module.css'
 
 export default function DateTime () {

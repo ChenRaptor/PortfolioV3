@@ -34,7 +34,7 @@ export async function GET(request: Request) {
           updated_at: item.updated_at,
           pushed_at: item.pushed_at,
           size: item.size,
-          main_language: item.language,
+          language: item.language,
           languages_distribution: languages_distribution.data,
           visibility: item.visibility,
           default_branch: item.default_branch

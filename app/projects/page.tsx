@@ -18,7 +18,7 @@ function BlogPage() {
 
 
   useEffect(() => {
-    (async () => await (await fetch('/api/mongodb/getters/repos')).json())().then((res) => setRepos(res))
+    (async () => await (await fetch('/api/mongodb/getters/repos')).json())().then((res) => setRepos(res.value))
   },[])
 
   return (
@@ -44,30 +44,7 @@ function BlogPage() {
         </ClassicLayout.FirstSection>
         <ClassicLayout.Section>
           <Heading type='h2'>Other article</Heading>
-          <FormBar onSubmit={onSubmit}>
-            <Input flex={5} placeholder='search' name="search" />
-            <Select flex={1} options={[{
-                value: 'creation_date_superior',
-                label: 'Sort by: creation date >' 
-                },{
-                value: 'creation_date_inferior',
-                label: 'Sort by: creation date <' 
-                }]}
-            name="sort"/>
-            <Select flex={1} options={[{
-                value: 'female',
-                label: 'Female' 
-                },{
-                value:'male',
-                label:'Male'
-                },{
-                value: 'other',
-                label: 'Other'
-            }]}
-            name="keyword"/>
-            <input hidden type="submit" />
-        </FormBar>
-            <Disposer object={repos}/>
+            <Disposer type='projects'/>
 
 
 
@@ -84,9 +61,8 @@ function BlogPage() {
                     </div>
             )}
         </div> */}
-        <div className={styles.pagination}>
-            <div></div>
-        </div>
+
+
         </ClassicLayout.Section>
     </ClassicLayout>
   );

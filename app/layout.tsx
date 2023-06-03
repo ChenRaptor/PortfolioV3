@@ -3,8 +3,10 @@ import { Inter } from 'next/font/google'
 import { Session } from 'next-auth'
 import { headers } from 'next/headers'
 import AuthContext from '@/components/Provider/AuthContext'
-import ProjectsProvider from '@/components/Provider/ProjectsProvider/main'
-import DateProvider from '@/components/Provider/DateProvider/main'
+import ProjectsProvider from '@/components/Provider/Projects/main'
+import DateProvider from '@/components/Provider/Date/main'
+import BlogProvider from '@/components/Provider/Blog/main'
+import ClientProvider from '@/components/Provider/Client/main'
 
 
 async function getSession(cookie: string): Promise<Session> {
@@ -36,9 +38,13 @@ export default async function RootLayout({children} : {children: React.ReactNode
             <body className={inter.className}>
                 <AuthContext session={session}>
                     <DateProvider>
+                        <ClientProvider>
                         <ProjectsProvider>
-                            {children}
+                            <BlogProvider>
+                                {children}
+                            </BlogProvider>
                         </ProjectsProvider>
+                        </ClientProvider>
                     </DateProvider>
                 </AuthContext>
             </body>
