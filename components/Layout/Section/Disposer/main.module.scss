@@ -1,0 +1,23 @@
+.main {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  
+    div {
+      // background: $color-primary;
+      height: 200px;
+      min-width: calc(calc(100% / 4) - 15px);
+      max-width: calc(calc(100% / 4) - 15px);
+      flex: 1;
+  
+      // background: rgba(29, 30, 36, 0.2588235294);
+      background: rgb(57 60 76 / 26%);
+  
+      /* background: rgba( 255, 255, 255, 0.25 ); */
+      /* box-shadow: 0 8px 32px 0 rgb(176 167 255 / 4%); */
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 0.25rem;
+      border: 1px solid rgba(40, 46, 37, 0.33);
+    }
+}

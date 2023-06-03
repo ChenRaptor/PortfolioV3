@@ -584,8 +584,8 @@ export function Planet() {
 export default function Scene3D() {
     return (
         <>
-        <Canvas gl={{ logarithmicDepthBuffer: true }} shadows camera={{ position: [0, 0, 20], fov: 25 }}>
-            <color attach="background" args={['#161a1d']} />
+        <Canvas gl={{ logarithmicDepthBuffer: true, alpha: true }} shadows camera={{ position: [0, 0, 20], fov: 25 }}>
+            {/* <color attach="background" args={['#000000']} /> */}
            {
             useMemo(() => <Planet/> , [])
            }

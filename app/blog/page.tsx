@@ -7,13 +7,18 @@ import { useSession } from 'next-auth/react';
 import Input from '@/components/Input/TextField/main';
 import Select from '@/components/Input/Select/main';
 import FormBar from '@/components/Input/FormBar/main';
-import Spinner from '@/components/Display/Spinner/main';
+import { useEffect, useState } from 'react';
+import Disposer from '@/components/Layout/Section/Disposer/main'
 
 function BlogPage() {
   const { data: session, status: sessionStatus } = useSession();
+  const [blogs, setBlogs] = useState()
 
   const onSubmit = (e:any) => {console.log(e)};
 
+  useEffect(() => {
+    (async () => await (await fetch('/api/mongodb/getters/blog')).json())().then((res) => setBlogs(res))
+  },[])
 
   return (
     <ClassicLayout>
@@ -62,18 +67,7 @@ function BlogPage() {
             name="keyword"/>
             <input hidden type="submit" />
         </FormBar>
-        <div className={styles['flex-container']}>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        <Disposer object={blogs}/>
         <div className={styles.pagination}>
             <div></div>
         </div>
