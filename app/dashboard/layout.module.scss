@@ -3,7 +3,7 @@
 }
 
 .main > aside {
-    background: var(--block);
+    background: $color-primary;
     min-width: 18rem;
     height: 100vh;
     border-radius: 0.25rem;
@@ -25,7 +25,7 @@
 }
 
 .wrapperlogo {
-    background: var(--accent);
+    background: $color-accent;
     display: flex;
     align-items: center;
 }

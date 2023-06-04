@@ -7,18 +7,18 @@ const BlogContext = createContext<BlogContextType | null>(null);
 function BlogProvider ({children} : any) {
     const [data, setData] = useState<BlogContextType['data']>({
         value: [],
-        count: null
+        valid: null,
+        total: null
     })
 
     const getDataFromDb = async () => {
-        const response = await (await fetch(`api/mongodb/getters/blog`)).json()
+        const response = await (await fetch(`/api/mongodb/getters/blog`)).json()
         setData(response)
     }
 
-    const getData = async (page: number = 0, nbByPage: number = 12) => {
-        return await (await fetch(`api/mongodb/getters/blog?page=${page}&&nbByPage=${nbByPage}`)).json() 
+    const getData = async (page: number = 0, nbByPage: number = 12, optionsSearch?: any) => {
+        return await (await fetch(`/api/mongodb/getters/blog?page=${page}&&nbByPage=${nbByPage}${optionsSearch.regex ? `&&regex=${optionsSearch.regex}` : ''}`)).json() 
     }
-
 
     useEffect(() => {
         getDataFromDb()

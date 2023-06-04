@@ -22,6 +22,7 @@ export async function GET(request: Request) {
             'X-GitHub-Api-Version': '2022-11-28'
           }
         });
+        // const time = new Date().getTime()
       
         return {
           name: item.name,
@@ -33,6 +34,7 @@ export async function GET(request: Request) {
           created_at: item.name,
           updated_at: item.updated_at,
           pushed_at: item.pushed_at,
+          obtained_at: new Date().getTime(),
           size: item.size,
           language: item.language,
           languages_distribution: languages_distribution.data,

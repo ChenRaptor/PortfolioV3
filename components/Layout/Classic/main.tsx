@@ -4,11 +4,17 @@ import styles from './main.module.scss';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Heading from '@/components/Display/Heading/main';
 import { usePathname } from 'next/navigation';
+import NavAsideHome from '@/components/Navigation/NavAside/NavAsideHome';
+import Logo from '@/components/Icons/Logo/Logo';
 function ClassicLayout({ children }: { children: React.ReactNode }) {
   return (
     <ParallaxProvider>
         <div className={styles.main}>
-            <aside></aside>
+            <aside>
+              <div>
+                <Logo/><NavAsideHome/>
+              </div>
+            </aside>
             <div>{children}</div>
             <aside></aside>
         </div>
@@ -17,7 +23,7 @@ function ClassicLayout({ children }: { children: React.ReactNode }) {
 }
 
 
-ClassicLayout.FirstSection = function FirstSection ({children, currentPage, controls} : {children: React.ReactNode, currentPage: 'home' | 'blog' | 'projects', controls?: (React.ReactNode)[]}) {
+ClassicLayout.FirstSection = function FirstSection ({children, options} : {children: React.ReactNode, options?: {display_activity: boolean}}) {
   const pathname = usePathname();
   const path = pathname.split('/')
 
@@ -26,7 +32,7 @@ ClassicLayout.FirstSection = function FirstSection ({children, currentPage, cont
   return (
     <section className={styles.firstsection}>
       <div>
-        <NavBar currentPage={currentPage}/>
+        <NavBar/>
         <div className={styles.indicator}>
             <Heading type='title-page'>{path.map((item,index) => {
                 return (
@@ -36,10 +42,9 @@ ClassicLayout.FirstSection = function FirstSection ({children, currentPage, cont
                   </>
                 )
             })}</Heading>
-            {controls ? controls[0] : null}
-        </div>
-        <div>
-            {controls ? controls[1] : null}
+            <div className={styles.controller}>
+              { options?.display_activity ? <p>Last Activity: <time>5 days ago</time></p> : null}
+            </div>
         </div>
       </div>
         {children}

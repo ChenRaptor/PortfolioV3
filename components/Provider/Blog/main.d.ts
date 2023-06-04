@@ -1,7 +1,8 @@
 export type BlogContextType = {
     data: {
-        value: any[]
-        count: number | null
+        value: any[],
+        valid: number | null
+        total: number | null
     }
-    getData: (page: number, nbByPage: number) => Promise<any>
+    getData: (page: number, nbByPage: number, optionsSearch?: any) => Promise<any>
 }

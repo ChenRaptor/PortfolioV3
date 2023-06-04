@@ -21,8 +21,10 @@ export type Projects = Project[]
 export type ProjectsContextType = {
     data: {
         value: Projects
-        count: number | null
+        valid: number | null
+        total: number | null
     }
     getDataFromDb: (page: number, nbByPage: number) => void
-    getData: (page: number, nbByPage: number) => Promise<any>
+    getData: (page: number, nbByPage: number, optionsSearch?: any) => Promise<any>
+    getOneData: (repo: string) => Promise<any>
 }

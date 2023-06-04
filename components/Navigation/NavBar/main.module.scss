@@ -2,7 +2,6 @@
     // position: absolute;
     // top: 1rem;
     left: 14rem;
-    height: 4rem;
     display: flex;
     align-items: center;
     width: fit-content;
@@ -39,5 +38,57 @@
 
     a:hover {
         color: $color-accent-variant2;
+    }
+}
+
+.navButton {
+    color: #fff;
+    cursor: pointer;
+    background: #1d1e24;
+    height: 3rem;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 90%;
+    width: 8rem;
+    text-decoration: none;
+    border: 0;
+    background: rgb(24 24 33);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(40, 46, 37, 0.33);
+}
+.nav {
+    position: absolute;
+    z-index: 800;
+    top: 90px;
+    border-radius: 0.25rem;
+
+    > a {
+        color: #fff;
+        cursor: pointer;
+        background: #1d1e24;
+        height: 3rem;
+        padding: 0 1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 90%;
+        width: 8rem;
+        text-decoration: none;
+        border-bottom: 1px solid #363636;
+        z-index: 100;
+        background: rgb(24 24 33);
+        /* background: rgba( 255, 255, 255, 0.25 ); */
+        /* box-shadow: 0 8px 32px 0 rgb(176 167 255 / 4%); */
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border: 1px solid rgba(40, 46, 37, 0.33);
+    }
+
+    a.activated {
+        border-bottom: 1px solid $color-accent;
+        background: $color-primary-activated;
     }
 }

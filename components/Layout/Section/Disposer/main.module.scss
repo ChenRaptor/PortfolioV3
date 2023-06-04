@@ -6,13 +6,14 @@
     // 320px — 480px
 
     .content {
-        width: 100%;
+        // width: 100%;
         height: fit-content;
         max-height: 400vh;
         display: flex;
         flex-wrap: wrap;
         gap: 2rem;
         color:#ecedee;
+        min-height: calc(600px + 4rem);
 
         > div {
             background: rgb(57 60 76 / 26%);

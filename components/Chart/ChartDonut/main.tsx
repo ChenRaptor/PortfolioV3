@@ -7,7 +7,7 @@ import am5themes_Animated from "@amcharts/amcharts5/themes/Animated";
 //chart type
 import * as am5percent from "@amcharts/amcharts5/percent";
 
-function ChartDonut({chartID, data} : {chartID: string, data: {value: number, category: string}[]}) {
+function ChartDonut({chartID, data} : {chartID: string, data: {[key:string]: number}}) {
   //const chart = useRef(null);
   useLayoutEffect(() => {
     //var root = am5.Root.new("chartdiv2");
@@ -37,7 +37,20 @@ function ChartDonut({chartID, data} : {chartID: string, data: {value: number, ca
           categoryField: "category"
         })
       );
-      series.data.setAll(data);
+
+      const data2: { value: number, category: string }[] = [];
+
+      for (const key in data) {
+        if (data.hasOwnProperty(key)) {
+          const category = key;
+          const value = data[key];
+          const transformedItem = { value, category };
+          data2.push(transformedItem);
+        }
+      }
+
+
+      series.data.setAll(data2);
       series.labels.template.set("forceHidden", true);
       series.ticks.template.set("forceHidden", true);
       

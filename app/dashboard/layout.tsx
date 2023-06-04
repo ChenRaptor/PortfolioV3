@@ -1,5 +1,5 @@
 "use client"
-import styles from './layout.module.css'
+import styles from './layout.module.scss'
 import DashboardLink from '@/components/Layout/Dashboard/DashboardLink/main';
 import DashboardLinkWrapper from '@/components/Layout/Dashboard/DashboardLinkWrapper/main';
 import BoxIcon from '@/components/Icons/box/main';

@@ -8,5 +8,5 @@
 }
 .main > div > svg{
     transform: scale(0.5);
-    fill: var(--color);
+    fill: $color-base-font;
 }
