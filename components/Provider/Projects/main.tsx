@@ -13,16 +13,16 @@ function ProjectsProvider ({children} : any) {
     })
 
     const getDataFromDb = async (page: number = 0, nbByPage: number = 30) => {
-        const response = await (await fetch(`/api/mongodb/getters/repos?page=${page}&&nbByPage=${nbByPage}`)).json()
+        const response = await (await fetch(`/api/mongodb/getters/repos?page=${page}&&nbByPage=${nbByPage}`,{cache: 'no-store'})).json()
         setData(response)
     }
 
     const getData = async (page: number = 0, nbByPage: number = 12, optionsSearch?: any) => {
-        return await (await fetch(`/api/mongodb/getters/repos?page=${page}&&nbByPage=${nbByPage}${optionsSearch.regex ? `&&regex=${optionsSearch.regex}` : ''}`)).json() 
+        return await (await fetch(`/api/mongodb/getters/repos?page=${page}&&nbByPage=${nbByPage}${optionsSearch.regex ? `&&regex=${optionsSearch.regex}` : ''}`,{cache: 'no-store'})).json() 
     }
 
     const getOneData = async (repo: string) => {
-        return await (await fetch(`/api/mongodb/getters/repos/${repo}`)).json()
+        return await (await fetch(`/api/mongodb/getters/repos/${repo}`,{cache: 'no-store'})).json()
     }
 
 

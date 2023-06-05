@@ -22,16 +22,7 @@ function BlogPage() {
 
   return (
     <ClassicLayout>
-        <ClassicLayout.FirstSection currentPage='blog' controls={[
-            <div key='fefrgth58c' className={styles.controller}>
-                <p>Last Activity: <time>5 days ago</time></p>
-                { session?.user ? <Button style={{minWidth: '12rem'}}>Create a new article</Button> : null }
-            </div>,
-            <>
-                <h1 key='fefrgth58cd' className={styles.AnnoncerTitle}>Welcome to my blog!</h1>
-                <p key='fefrgth58cdd'>This is where I share my web development journey, my thoughts and experiences in the exciting world of website and web application creation.</p>
-            </>
-        ]}>
+        <ClassicLayout.FirstSection>
 
             
         <Heading type='h2'>Last article</Heading>

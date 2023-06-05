@@ -11,7 +11,7 @@ import { useRouter } from 'next/navigation'
 interface DisposerProps {
     type: 'projects' | 'blog',
     currentPage?: number
-    dashboardLink: boolean
+    dashboardLink?: boolean
 }
 
 interface getDataProps {
@@ -114,7 +114,11 @@ function Disposer ({type, currentPage = 0, dashboardLink} : DisposerProps) {
                     </div>
                 )) 
                 : (page?.pages[page.currentPage] ?? []).map((article: any) => (
-                    <div key={article._id} onClick={() => {}}>
+                    <div key={article._id} onClick={() => {
+                        dashboardLink 
+                        ? null
+                        : router.push(`/blog/${article.name}`)
+                    }}>
                         <div>
                             <h3>{`${article.name}`}</h3>
                             <p>{article.description}</p>

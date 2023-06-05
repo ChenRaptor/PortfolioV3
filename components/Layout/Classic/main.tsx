@@ -37,7 +37,7 @@ ClassicLayout.FirstSection = function FirstSection ({children, options} : {child
             <Heading type='title-page'>{path.map((item,index) => {
                 return (
                   <>
-                    <span key={index*2}>{item}</span>
+                    { item ? <span key={index*2}>{item}</span> : null }
                     { path[index + 1] && index > 0? <span key={index*2 + 1}>/</span> : null }
                   </>
                 )

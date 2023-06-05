@@ -11,7 +11,7 @@ export async function GET(request: Request) {
     const value = await octokit.request('GET /user/repos?type={type}', {
         type: 'owner',
         headers: {
-          'X-GitHub-Api-Version': '2022-11-28'
+          'X-GitHub-Api-Version': '2022-11-28',
         }
     })
     
@@ -19,10 +19,9 @@ export async function GET(request: Request) {
         const languages_distribution = await octokit.request('GET /repos/ChenRaptor/{repo}/languages', {
           repo: item.name,
           headers: {
-            'X-GitHub-Api-Version': '2022-11-28'
+            'X-GitHub-Api-Version': '2022-11-28',
           }
         });
-        // const time = new Date().getTime()
       
         return {
           name: item.name,
@@ -48,5 +47,13 @@ export async function GET(request: Request) {
     await collection.deleteMany({})
     collection.insertMany(repos);
 
+    const newHeaders = new Headers();
+    newHeaders.append('cache-control','no-cache, no-store, max-age=0');
+    NextResponse.next({
+        request: {
+          headers: newHeaders,
+        }
+    });
+    
     return NextResponse.json({message: 'successful', value: repos});
 }

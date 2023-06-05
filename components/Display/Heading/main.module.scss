@@ -6,6 +6,7 @@
 .h1 > div {
     display: flex;
     gap: 16px;
+    color: $color-base-font-variant1
 }
 .h2 {
     color: grey;
@@ -22,5 +23,5 @@
     color: transparent;
     -webkit-text-fill-color: transparent;
     display: flex;
-    // gap: 0.5rem;
+    gap: 0.5rem;
 }

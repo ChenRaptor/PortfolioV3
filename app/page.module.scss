@@ -7,3 +7,9 @@
     z-index: -1;
     margin: 0;
 }
+
+.pad {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}

@@ -12,12 +12,16 @@ function BlogProvider ({children} : any) {
     })
 
     const getDataFromDb = async () => {
-        const response = await (await fetch(`/api/mongodb/getters/blog`)).json()
+        const response = await (await fetch(`/api/mongodb/getters/blog`,{cache: 'no-store'})).json()
         setData(response)
     }
 
     const getData = async (page: number = 0, nbByPage: number = 12, optionsSearch?: any) => {
-        return await (await fetch(`/api/mongodb/getters/blog?page=${page}&&nbByPage=${nbByPage}${optionsSearch.regex ? `&&regex=${optionsSearch.regex}` : ''}`)).json() 
+        return await (await fetch(`/api/mongodb/getters/blog?page=${page}&&nbByPage=${nbByPage}${optionsSearch.regex ? `&&regex=${optionsSearch.regex}` : ''}`,{cache: 'no-store'})).json() 
+    }
+
+    const getOneData = async (repo: string) => {
+        return await (await fetch(`/api/mongodb/getters/blog/${repo}`,{cache: 'no-store'})).json()
     }
 
     useEffect(() => {
@@ -25,7 +29,7 @@ function BlogProvider ({children} : any) {
     },[])
 
 
-    return <BlogContext.Provider value={{data, getData}}>{children}</BlogContext.Provider>;
+    return <BlogContext.Provider value={{data, getData, getOneData}}>{children}</BlogContext.Provider>;
 
 };
 

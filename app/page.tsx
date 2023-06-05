@@ -15,18 +15,20 @@ const CSRCanvas = dynamic(
 function HomePage() {
   return (
     <ClassicLayout>
-        <ClassicLayout.FirstSection currentPage='home'>
+        <ClassicLayout.FirstSection>
             <div className={styles.canvas}><CSRCanvas/></div>
-            <Parallax startScroll={0} endScroll={400} translateX={['0px', '-100px']} opacity={[1,0]} scale={[1,0.9]} easing='easeIn'>
-                <Heading type='h1'>
-                    <div><span>Hi</span><Font color='color-orange'>visitor<span>,</span></Font></div>
-                    <div><span>I</span><span>am</span><span>Antoine</span><span>Bonneau</span></div>
-                    <div><span>Future</span><Font color='color-cyan'>web</Font><Font color='color-cyan'>developer</Font></div>
-                </Heading>
-            </Parallax>
-            <Parallax startScroll={0} endScroll={400} translateX={['0px', '-100px']} opacity={[1,0]} scale={[1,0.9]} easing='easeInOut'>
-                <Button noflex>Read more</Button>
-            </Parallax>
+            <div className={styles.pad}>
+              <Parallax startScroll={0} endScroll={400} translateX={['0px', '-100px']} opacity={[1,0]} scale={[1,0.9]} easing='easeIn'>
+                  <Heading type='h1'>
+                      <div><span>Hi</span><Font color='color-orange'>visitor<span>,</span></Font></div>
+                      <div><span>I</span><span>am</span><span>Antoine</span><span>Bonneau</span></div>
+                      <div><span>Future</span><Font color='color-cyan'>web</Font><Font color='color-cyan'>developer</Font></div>
+                  </Heading>
+              </Parallax>
+              <Parallax startScroll={0} endScroll={400} translateX={['0px', '-100px']} opacity={[1,0]} scale={[1,0.9]} easing='easeInOut'>
+                  <Button noflex>Read more</Button>
+              </Parallax>
+            </div>
         </ClassicLayout.FirstSection>
     </ClassicLayout>
   );

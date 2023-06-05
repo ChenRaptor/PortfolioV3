@@ -1,0 +1,42 @@
+.markdown-wrapper {
+    h1 {
+        font-size: 2.75rem;
+        font-weight: 500;
+        padding: 1rem 0;
+        color: #9083d9;
+    }
+    h2 {
+        font-size: 2rem;
+        padding: 0.8rem 0;
+        font-weight: 500;
+    }
+    a {
+        color: #b0ccff;
+        text-decoration: none;
+
+        &:hover {
+            color: #9083d9;
+        }
+    }
+
+    table {
+        display: block;
+        width: 100%;
+        width: max-content;
+        max-width: 100%;
+        overflow: auto;
+        margin-top: 0;
+        margin-bottom: 16px;
+        border-collapse: collapse;
+        border-spacing: 0;
+
+        th {
+            padding: 6px 13px;
+            border: 1px solid $color-base-font;
+        }
+    }
+
+    img {
+        width: 500px;
+    }
+}
