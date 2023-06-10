@@ -31,13 +31,17 @@
     "react-loading-skeleton": "^3.3.1",
     "react-markdown": "^8.0.7",
     "react-scroll-parallax": "^3.4.2",
+    "reactflow": "^11.7.2",
+    "remark-gemoji": "^7.0.1",
     "remark-gfm": "^3.0.1",
     "three": "^0.152.2",
     "typescript": "5.0.4",
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@types/dagre": "^0.7.48",
     "@types/mongodb": "^4.0.7",
+    "dagre": "^0.8.5",
     "sass": "^1.62.1"
   }
 }

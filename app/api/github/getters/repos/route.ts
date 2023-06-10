@@ -3,7 +3,7 @@ import { Octokit } from 'octokit';
 import { connectToDatabase } from '@/libs/mongodb';
 
 export async function GET(request: Request) {
-
+    //dzd
     const octokit = new Octokit({
         auth: process.env.GITHUB_TOKEN
     })

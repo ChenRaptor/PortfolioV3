@@ -1,10 +1,29 @@
 .markdown-wrapper {
+    // background: #1d1e2442;
+    background: rgb(57 60 76 / 26%);
+
+
+    /* background: rgba( 255, 255, 255, 0.25 ); */
+    /* box-shadow: 0 8px 32px 0 rgb(176 167 255 / 4%); */
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 0.25rem;
+    border: 1px solid rgb(40 46 37 / 33%);
+    padding: 2rem;
+
+
     h1 {
         font-size: 2.75rem;
         font-weight: 500;
         padding: 1rem 0;
         color: #9083d9;
+        border-bottom: 2px solid #2d2d42;
+
+        &:first-of-type {
+            padding: 0 0 1rem 0;
+        }
     }
+
     h2 {
         font-size: 2rem;
         padding: 0.8rem 0;

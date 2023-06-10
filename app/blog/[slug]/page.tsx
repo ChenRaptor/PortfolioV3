@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react';
 import remarkGfm from 'remark-gfm'
 import { BlogContext, BlogContextType } from '@/components/Provider/Blog/main';
 import styles from './page.module.scss'
+import remarkGemoji from 'remark-gemoji'
 
 function BlogArticlePage({ params }: { params: { slug: string } }) {
   // const { data: session, status: sessionStatus } = useSession();
@@ -29,7 +30,7 @@ function BlogArticlePage({ params }: { params: { slug: string } }) {
         <ClassicLayout.FirstSection>
           <div className={styles['markdown-wrapper']}>
             {
-              data?.content ? <ReactMarkdown remarkPlugins={[remarkGfm]}>
+              data?.content ? <ReactMarkdown remarkPlugins={[remarkGfm, remarkGemoji]}>
                 {data?.content}
               </ReactMarkdown> : null
             }

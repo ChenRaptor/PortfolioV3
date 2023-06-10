@@ -120,7 +120,7 @@ function Disposer ({type, currentPage = 0, dashboardLink} : DisposerProps) {
                         : router.push(`/blog/${article.name}`)
                     }}>
                         <div>
-                            <h3>{`${article.name}`}</h3>
+                            <h3>{`${article.name.split('.md')[0]}`}</h3>
                             <p>{article.description}</p>
                         </div>
                     </div>

@@ -1,5 +1,6 @@
 import ExpandMoreIcon from "./ExpandMore/main";
 import SearchIcon from "./Search/main";
+import StarIcon from "./Star/main";
 import ArrowLeftIcon from "./arrowleft/main";
 import BoxIcon from "./box/main";
 import HomeIcon from "./home/main";
@@ -14,6 +15,7 @@ const icons : {[key: string]: () => JSX.Element}= {
     box: BoxIcon,
     expandmore: ExpandMoreIcon,
     search: SearchIcon,
+    star: StarIcon
 }
 
 export default icons;

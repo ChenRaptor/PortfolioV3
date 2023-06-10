@@ -6,13 +6,14 @@ import { headers } from 'next/headers';
 
 export async function GET(request: Request) {
 
+    const headersList = headers();
+    const cache = headersList.get('cache-control');
+    console.log(cache);
+    
     const octokit = new Octokit({
         auth: process.env.GITHUB_TOKEN
     })
 
-    const headersList = headers();
-    const cache = headersList.get('cache-control');
-    console.log(cache);
     const value = await octokit.request('GET /repos/{owner}/{repo}/git/trees/{branch}?recursive=1', {
         owner: 'ChenRaptor',
         repo: 'Blog',
