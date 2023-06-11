@@ -17,7 +17,7 @@ function NodeText({data} : any) {
             </div>
         </div>
         { data?.type === 'auto-eval' ?
-            <div>
+            <div style={data?.value?.acquisition === null ? {background: '#1c1c1c'} : undefined}>
                 <div className={styles[`activated${data?.value?.acquisition}`]}>
                     <div></div>
                     <div></div>
@@ -34,7 +34,9 @@ function NodeText({data} : any) {
                         data?.value?.acquisition === 2 
                         ? "Acquis Partiel" :
                         data?.value?.acquisition === 3 
-                        ? "Acquis" : "Parfaitement Acquis" }
+                        ? "Acquis" :
+                        data?.value?.acquisition === 4 ? 
+                        "Parfaitement Acquis" : null}
                     </p>
                 </div>
                 <div>

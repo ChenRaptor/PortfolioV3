@@ -1,24 +1,33 @@
 "use client"
 import NodeOrigin from '@/components/ReactFlow/nodes/NodeOrigin';
 import NodeText from '@/components/ReactFlow/nodes/NodeText';
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import ReactFlow, {
+  useKeyPress,
   addEdge,
   ConnectionLineType,
   Panel,
+  Node,
+  Edge,
   useNodesState,
   useEdgesState,
   Controls,
+  MiniMap,
+  ReactFlowProvider,
+  useReactFlow,
+  Position,
 } from 'reactflow';
 import dagre from 'dagre'
 import 'reactflow/dist/style.css';
+import NodeImage from '@/components/ReactFlow/nodes/NodeImage';
+import { useBoolean, useCounter } from 'usehooks-ts';
 
 
 
 const position = { x: 0, y: 0 };
 const edgeType = 'smoothstep';
 
-export const initialNodes = [
+const initialNodes : Node[] = [
         { id: '1', type: 'NodeOrigin', position, data: { label: '1' } },
         { id: '2', type: 'NodeText', position, data: { title: 'Comprendre', colorLabel: '#a95c5c80' } },
         
@@ -115,7 +124,7 @@ export const initialNodes = [
             colorLabel: '#9f826480',
             type: 'auto-eval',
             value: {
-                acquisition: 3
+                acquisition: null
             },
             description: "Mettre en place une présence sur les réseaux sociaux"
          } },
@@ -185,8 +194,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Produire des pages et applications Web responsives"
          } },
@@ -196,8 +205,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Mettre en place ou développer un back office"
          } },
@@ -207,8 +216,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Intégrer, produire ou développer des interactions riches ou des dispositifs interactifs"
          } },
@@ -217,9 +226,9 @@ export const initialNodes = [
             colorLabel: '#6e9d6380',
             type: 'auto-eval',
             value: {
-                acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                acquisition: null,
+                content: "",
+                proof: ""
             },
             description: "Modéliser les traitements d'une application Web"
          } },
@@ -229,8 +238,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Optimiser une application web en termes de référencement et de temps de chargement"
          } },
@@ -240,8 +249,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Configurer une solution d'hébergement adaptée aux besoins"
          } },
@@ -254,8 +263,8 @@ export const initialNodes = [
             type: 'auto-eval',
             value: {
                 acquisition: 4,
-                content: "Bien sûre",
-                proof: "https://kaitems.fr"
+                content: "",
+                proof: ""
             },
             description: "Gérer un projet avec une méthode d'amélioration continue par exemple une méthode agile"
          } },
@@ -306,7 +315,7 @@ export const initialNodes = [
          } },
   ];
 
-export const initialEdges = [
+export const initialEdges : Edge[] = [
         { id: 'e1-2', source: '1', target: '2' },
         { id: 'e1-3', source: '1', target: '3' },
         { id: 'e1-4', source: '1', target: '4' },
@@ -354,6 +363,66 @@ export const initialEdges = [
 
 
 
+const otherNode : Node[] = [
+    { id: 'cv', type: 'NodeImage', position: { x: -3000, y: -3000 },
+        data: {
+          src: '/CV_Bonneau_Antoine.png',
+          alt: 'Antoine Bonneau CV',
+          style: {width: '1414px', height: '2000px'},
+        },
+    }
+]
+
+const order1 : { x: number, y:number }[] = []
+const order2 : { x: number, y:number }[] = []
+const order3 : { x: number, y:number }[] = []
+const order4 : { x: number, y:number }[] = []
+
+for (let i = 0; i < 26; i++) {
+    otherNode.push({ id: `prepa${i + 1}`, type: 'NodeImage', position: { x: -16000 + (2000 * (i % 4)), y: Math.floor(i/4) * 1200 },
+        data: {
+            src: `/prepa/${i + 1}.png`,
+            alt: '',
+            style: {width: '1920px', height: '1080px'},
+        },
+    })
+    order1.push({ x: -(-16000 + (2000 * (i % 4))), y: -(Math.floor(i/4) * 1200) })
+}
+
+for (let i = 0; i < 15; i++) {
+    otherNode.push({ id: `mystudyroom${i + 1}`, type: 'NodeImage', position: { x: -26000 + (2000 * (i % 4)), y: Math.floor(i/4) * 1200 },
+        data: {
+            src: `/mystudyroom/${i + 1}.png`,
+            alt: '',
+            style: {width: '1920px', height: '1080px'},
+        },
+    })
+    order2.push({ x: -(-26000 + (2000 * (i % 4))), y: -(Math.floor(i/4) * 1200) })
+}
+
+for (let i = 0; i < 12; i++) {
+    otherNode.push({ id: `sherlock${i + 1}`, type: 'NodeImage', position: { x: -36000 + (2000 * (i % 4)), y: Math.floor(i/4) * 1200 },
+        data: {
+            src: `/sherlock/${i + 1}.png`,
+            alt: '',
+            style: {width: '1920px', height: '1080px'},
+        },
+    })
+    order3.push({ x: -(-36000 + (2000 * (i % 4))), y: -(Math.floor(i/4) * 1200) })
+}
+
+for (let i = 0; i < 7; i++) {
+    otherNode.push({ id: `packshot${i + 1}`, type: 'NodeImage', position: { x: -46000 + (2000 * (i % 4)), y: Math.floor(i/4) * 1200 },
+        data: {
+            src: `/packshot/${i + 1}.png`,
+            alt: '',
+            style: {width: '1920px', height: '1080px'},
+        },
+    })
+    order4.push({ x: -(-46000 + (2000 * (i % 4))), y: -(Math.floor(i/4) * 1200) })
+}
+
+
 
 
 
@@ -363,46 +432,55 @@ dagreGraph.setDefaultEdgeLabel(() => ({}));
 const nodeWidth = 400;
 const nodeHeight = 100;
 
-const getLayoutedElements = (nodes, edges, direction = 'LR') => {
-  const isHorizontal = direction === 'LR';
-  dagreGraph.setGraph({ rankdir: direction });
-
-  nodes.forEach((node) => {
-    dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
-  });
-
-  edges.forEach((edge) => {
-    dagreGraph.setEdge(edge.source, edge.target);
-  });
-
-  dagre.layout(dagreGraph);
-
-  nodes.forEach((node) => {
-    const nodeWithPosition = dagreGraph.node(node.id);
-    node.targetPosition = isHorizontal ? 'left' : 'top';
-    node.sourcePosition = isHorizontal ? 'right' : 'bottom';
-
-    // We are shifting the dagre node position (anchor=center center) to the top left
-    // so it matches the React Flow node anchor point (top left).
-    node.position = {
-      x: nodeWithPosition.x - nodeWidth / 2,
-      y: nodeWithPosition.y - nodeHeight / 2,
-    };
-
-    return node;
-  });
-
-  return { nodes, edges };
-};
-
-const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
-  initialNodes,
-  initialEdges
-);
+const getLayoutedElements = (nodes: Node[], edges: Edge[], direction: string = 'LR') => {
+    const isHorizontal = direction === 'LR';
+    dagreGraph.setGraph({ rankdir: direction });
+  
+    nodes.forEach((node) => {
+      dagreGraph.setNode(node.id, { width: nodeWidth, height: nodeHeight });
+    });
+  
+    edges.forEach((edge) => {
+      dagreGraph.setEdge(edge.source, edge.target);
+    });
+  
+    dagre.layout(dagreGraph);
+  
+    nodes.forEach((node) => {
+      const nodeWithPosition = dagreGraph.node(node.id);
+      node.targetPosition = (isHorizontal ? 'left' : 'top') as Position;
+      node.sourcePosition = (isHorizontal ? 'right' : 'bottom') as Position;
+  
+      node.position = {
+        x: nodeWithPosition.x - nodeWidth / 2,
+        y: nodeWithPosition.y - nodeHeight / 2,
+      };
+  
+      return node;
+    });
+  
+    return { nodes, edges };
+  };
+  
+    const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
+        initialNodes as Node[],
+        initialEdges as Edge[]
+    );
 
 
 
 
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+}
+
+function fullScreen(boolean : boolean) {
+    boolean ? document.documentElement.requestFullscreen() : document.exitFullscreen() 
+}
 
 
 
@@ -411,31 +489,121 @@ const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
 
 
 
+function LayoutFlow () {
 
-const LayoutFlow = () => {
-  const [nodes, setNodes, onNodesChange] = useNodesState(layoutedNodes);
+    const arrowLeftPressed = useKeyPress('ArrowLeft');
+    const arrowRightPressed = useKeyPress('ArrowRight');
+    const escapePressed = useKeyPress('²');
+    const _1Pressed = useKeyPress('1');
+    const _2Pressed = useKeyPress('2');
+    const _3Pressed = useKeyPress('3');
+    const _4Pressed = useKeyPress('4');
+
+    const { setViewport, zoomIn, zoomOut, zoomTo } = useReactFlow();
+
+    const { count, setCount, increment, decrement, reset } = useCounter(0)
+    const [ valueSa, setValueSa ] = useState(0)
+    
+    // setViewport({ x: 3000, y: 0, zoom: 1 }, { duration: 800 });
+
+    useEffect(() => {
+
+        if (_1Pressed === true) {
+            reset();
+            setValueSa(1)
+            fullScreen(true);
+            setViewport({ ...order1[0], zoom: 1 }, { duration: 400 });
+        }
+        else if (_2Pressed === true) {
+            reset();
+            setValueSa(2)
+            fullScreen(true);
+            setViewport({ ...order2[0], zoom: 1 }, { duration: 400 });
+        }
+        else if (_3Pressed === true) {
+            reset();
+            setValueSa(3)
+            fullScreen(true);
+            setViewport({ ...order3[0], zoom: 1 }, { duration: 400 });
+        }
+        else if (_4Pressed === true) {
+            reset();
+            setValueSa(4)
+            fullScreen(true);
+            setViewport({ ...order4[0], zoom: 1 }, { duration: 400 });
+        }
+        if (arrowRightPressed === true) {
+            if (valueSa === 1) {
+                if (count < 25) {
+                    increment()
+                    setViewport({ ...order1[count + 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 2) {
+                if (count < 14) {
+                    increment()
+                    setViewport({ ...order2[count + 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 3) {
+                if (count < 11) {
+                    increment()
+                    setViewport({ ...order3[count + 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 4) {
+                if (count < 6) {
+                    increment()
+                    setViewport({ ...order4[count + 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+        }
+        if (arrowLeftPressed === true) {
+            if (valueSa === 1) {
+                if (count > 0) {
+                    decrement()
+                    setViewport({ ...order1[count - 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 2) {
+                if (count > 0) {
+                    decrement()
+                    setViewport({ ...order2[count - 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 3) {
+                if (count > 0) {
+                    decrement()
+                    setViewport({ ...order3[count - 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+            else if (valueSa === 4) {
+                if (count > 0) {
+                    decrement()
+                    setViewport({ ...order4[count - 1], zoom: 1 }, { duration: 0 });
+                }
+            }
+        }
+        if (escapePressed === true) {
+            setValueSa(0)
+            fullScreen(false);
+            zoomTo(0.25,{ duration: 400 })
+            reset();
+        }
+
+    }, [_1Pressed,_2Pressed,_3Pressed,_4Pressed,arrowRightPressed,arrowLeftPressed,escapePressed]);
+
+
+  const [nodes, setNodes, onNodesChange] = useNodesState([...layoutedNodes,...otherNode]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(layoutedEdges);
-  const nodeTypes = useMemo(() => ({ NodeOrigin: NodeOrigin, NodeText: NodeText }), []);
+  const nodeTypes = useMemo(() => ({ NodeOrigin: NodeOrigin, NodeText: NodeText, NodeImage: NodeImage }), []);
 
   const onConnect = useCallback(
-    (params) =>
+    (params: any) =>
       setEdges((eds) =>
         addEdge({ ...params, type: ConnectionLineType.SmoothStep, animated: true }, eds)
       ),
     []
-  );
-  const onLayout = useCallback(
-    (direction) => {
-      const { nodes: layoutedNodes, edges: layoutedEdges } = getLayoutedElements(
-        nodes,
-        edges,
-        direction
-      );
-
-      setNodes([...layoutedNodes]);
-      setEdges([...layoutedEdges]);
-    },
-    [nodes, edges]
   );
 
   return (
@@ -451,16 +619,35 @@ const LayoutFlow = () => {
       onlyRenderVisibleElements
       nodesDraggable={false}
       minZoom={0.2}
+      proOptions={{ hideAttribution: true }}
       fitView
     >
-      <Panel position="top-right">
-        <button onClick={() => onLayout('TB')}>vertical layout</button>
-        <button onClick={() => onLayout('LR')}>horizontal layout</button>
-      </Panel>
-      <Controls showInteractive={false}/>
+        { valueSa === 0 ? <>
+            <Controls showInteractive={false}/>
+            <MiniMap 
+                // style={{background: '#1d1e24', opacity:0.}}
+                nodeColor={(n) => {
+                if (n.data?.colorLabel) return n.data?.colorLabel
+                return '#fff';
+                }}
+
+                nodeStrokeColor={(n) => {
+                    if (n.data?.colorLabel) return n.data?.colorLabel
+                }}
+            />
+        </>
+        : null }
     </ReactFlow>
     </div>
   );
 };
 
-export default LayoutFlow;
+
+
+export default function FlowContainer () {
+    return (
+        <ReactFlowProvider>
+            <LayoutFlow/>
+        </ReactFlowProvider>
+    )
+}

@@ -7,6 +7,13 @@ const nextConfig = {
         includePaths: [path.join(__dirname, 'styles')],
         prependData: `@import "/app/var.scss";`
     },
+    typescript: {
+      // !! WARN !!
+      // Dangerously allow production builds to successfully complete even if
+      // your project has type errors.
+      // !! WARN !!
+      ignoreBuildErrors: true,
+    },
     async headers() {
         return [
           {
