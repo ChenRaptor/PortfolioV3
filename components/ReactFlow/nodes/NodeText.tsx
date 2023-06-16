@@ -1,6 +1,7 @@
 import { Handle, Position } from 'reactflow';
 import styles from './nodes.module.scss'
 import StarIcon from '@/components/Icons/Star/main';
+import Link from 'next/link';
 
 function NodeText({data} : any) {
 
@@ -18,6 +19,9 @@ function NodeText({data} : any) {
         </div>
         { data?.type === 'auto-eval' ?
             <div style={data?.value?.acquisition === null ? {background: '#1c1c1c'} : undefined}>
+
+
+            
                 <div className={styles[`activated${data?.value?.acquisition}`]}>
                     <div></div>
                     <div></div>
@@ -39,8 +43,20 @@ function NodeText({data} : any) {
                         "Parfaitement Acquis" : null}
                     </p>
                 </div>
+
+
+
+
                 <div>
-                    <p>{data?.value?.content}</p>
+                    <p>{data?.value?.context}</p>
+                </div>
+
+                <div>
+                    {
+                        data?.value?.proof ? 
+                        <Link target="blank" href={data?.value?.proof ?? ''}>Preuve</Link>
+                        : null
+                    }
                 </div>
             </div>
         : null }

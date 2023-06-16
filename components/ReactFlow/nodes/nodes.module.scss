@@ -69,7 +69,7 @@
 
     > div:nth-of-type(2) {
         // background: rgb(133, 133, 133);
-        width: 900px;
+        width: 1300px;
         min-height: 100px;
         border: 1px solid rgb(40 46 37 / 33%);
         display: flex;
@@ -81,6 +81,7 @@
             justify-content: space-between;
             height: 100%;
             width: 40%;
+            min-width: 40%;
             padding: 30px;
             > div {
                 height: 30px;
@@ -128,13 +129,36 @@
             justify-content: space-between;
             height: 100%;
             width: fit-content;
+            font-size: 14px;
+            width: 200px;
         }
         > div:nth-of-type(3) {
+            margin-left: 50px;
             display: flex;
             align-items: center;
             justify-content: space-between;
             height: 100%;
-            width: 50%;
+            width: 600px;
+            font-size: 10px;
+            text-align: justify;
+        }
+
+        > div:nth-of-type(4) {
+            margin-left: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            width: 200px;
+            font-size: 14px;
+
+            
+            a {
+                text-decoration: none;
+                background: #38385480;
+                padding: 10px;
+                border-radius: 0.25rem;
+            }
         }
     }
 
