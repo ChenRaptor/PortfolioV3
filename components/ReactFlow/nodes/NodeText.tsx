@@ -53,8 +53,10 @@ function NodeText({data} : any) {
 
                 <div>
                     {
-                        data?.value?.proof ? 
-                        <Link target="blank" href={data?.value?.proof ?? ''}>Preuve</Link>
+                        data?.value?.proof ? data?.value?.proof?.startsWith('http') ? 
+			<Link target="blank" href={`${data?.value?.proof ?? ''}`}>Preuve</Link>
+			: 
+                        <Link target="blank" href={`${process.env.HOST}${data?.value?.proof ?? ''}`}>Preuve</Link>
                         : null
                     }
                 </div>

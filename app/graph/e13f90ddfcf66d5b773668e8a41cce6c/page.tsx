@@ -70,7 +70,7 @@ const initialNodes : Node[] = [
             colorLabel: '#a95c5c80',
             type: 'auto-eval',
             value: {
-                acquisition: 4,
+                acquisition: 3,
                 proof: `/pdf/mystudyroom.pdf`,
                 context: "Dans le cadre du projet MyStudyRoom, j'ai collaboré avec mon groupe composé de Benoît Cabocel et Maxence Morot pour réaliser un User Journey Map. L'objectif était de définir les parcours d'un utilisateur cible sur un site dédié à la recherche de colocation."
             },
@@ -81,7 +81,7 @@ const initialNodes : Node[] = [
             colorLabel: '#a95c5c80',
             type: 'auto-eval',
             value: {
-                acquisition: 4,
+                acquisition: 3,
                 proof: `/pdf/mystudyroom.pdf`,
                 context: "Dans le prolongement du projet MyStudyRoom, notre groupe a entrepris la réalisation d'une Empathy Map pour une personne en quête d'une colocation. J'ai été chargé de cartographier les différentes étapes de réflexion de cette personne cible, en identifiant les points de friction potentiels ainsi que les aspects satisfaisants."
             },
@@ -107,7 +107,7 @@ const initialNodes : Node[] = [
             colorLabel: '#9f826480',
             type: 'auto-eval',
             value: {
-                acquisition: 4,
+                acquisition: 3,
                 proof: `/pdf/mystudyroom.pdf`,
                 context: "Dans le cadre du projet MyStudyRoom, j'ai participé en groupe à la conception d'une maquette pour l'application de colocation du même nom. Notre approche de conception a suivi le principe de l'Atomic Design enseigné par Monsieur Labille. La création de cette maquette interactive s'est appuyée sur des études préliminaires, notamment des analyses des sites concurrents, dans le but de fournir une expérience optimale aux futurs utilisateurs grâce à une ergonomie soignée."
             },
@@ -208,7 +208,7 @@ const initialNodes : Node[] = [
             colorLabel: '#dae17280',
             type: 'auto-eval',
             value: {
-                acquisition: 3,
+                acquisition: 4,
                 proof: `https://sunv1.kaitems.fr`,
                 context: "Dans le cadre de la SAE 303, j'ai eu l'opportunité d'analyser un jeu de données en utilisant des outils et des technologies tels que Google Data Studio et AmCharts.js. Grâce à ces outils, j'ai pu traiter les données et les exploiter en créant des graphiques adaptés pour une meilleure visualisation et compréhension des informations contenues. J'ai aussi réalisé de la 3D comme par exemple ce générateur d'étoile."
             },
@@ -295,7 +295,7 @@ const initialNodes : Node[] = [
             colorLabel: '#3d508580',
             type: 'auto-eval',
             value: {
-                acquisition: 4,
+                acquisition: 3,
                 proof: ``,
                 context: `En tant que développeur, nous avons instauré des réunions matinales de 10 minutes pour faire le point sur les réalisations de la veille, les difficultés rencontrées et les objectifs fixés pour la journée en cours. J'ai également utilisé GitLab et OpenProject afin d'adopter une méthodologie de travail en groupe plus efficace. Maintenant, j'utilise GitHub pour tous mes projets pour gérer mes projets de manière efficace.`
             },

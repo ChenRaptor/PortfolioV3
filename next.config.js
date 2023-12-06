@@ -14,6 +14,9 @@ const nextConfig = {
       // !! WARN !!
       ignoreBuildErrors: true,
     },
+    env: {
+      HOST: process.env.HOST,
+    },
     async headers() {
         return [
           {
